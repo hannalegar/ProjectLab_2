@@ -4,6 +4,8 @@ import pandas as pd
 import numpy as np
 import ftplib
 import io
+import keras
+import nltk
 from os import listdir
 from os.path import isfile, join
 from numpy import array
@@ -18,6 +20,11 @@ from sklearn import preprocessing
 from sklearn.preprocessing import LabelEncoder
 from keras.utils import np_utils
 from keras.preprocessing.text import Tokenizer
+from nltk.corpus import stopwords
+from gensim.test.utils import datapath
+from gensim.models import KeyedVectors
+import gensim.downloader as api
+from gensim.models import Word2Vec
 # ----------------------------------------- METHODS ------------------------------------------------#
 def intervalNames(path):
         f = open(path, "r")
@@ -81,6 +88,11 @@ def replace_element(my_list, old_value, new_value):
             if i == old_value:
                 my_list[n] = new_value
         return my_list
+def split_senteces_into_words(text):
+    return keras.preprocessing.text.text_to_word_sequence(text,
+                                               filters='!"#$%&()*+,-./:;<=>?@[\\]^_`{|}~\t\n',
+                                               lower=True,
+                                               split=" ")        
 char_toNum_switcher = {
         "V" : 1,
         "O" : 2,
@@ -302,18 +314,127 @@ target = ugyfelTargetList + diszpecserTargetList
 # 
 # len(target) == len(texts)
 
-# ------------------------------------------ ENCODING -------------------------------------------------#
+# ------------------------------------------ FILTER -------------------------------------------------#
+
+# --- All TEXT ---#
+#  texts variable
+# ---- TARGET ----#
+# target variable
+
+# ---- split sentences into words ................................
+splittedTexts = [] 
+
+for i in texts:
+    splittedTexts.append(split_senteces_into_words(i))
+
+splittedTexts
+splittedTexts[0]
+
+# set stopWords
+stopWords = set(stopwords.words("Hungarian"))
+stopWords 
+
+# ---- filter splitted sentences ................................
+filteredTexts = []
+
+for s in splittedTexts:
+    filteredTexts.append(splitted_sentence(i))
+
+filteredTexts[0]
+
+def splitted_sentence(sentence):
+    splitted_s = [] 
+    for w in s:
+        if w not in stopWords:
+            splitted_s.append(w)
+    return splitted_s
 
 
+# for i in range(0, 15):
+#     s = ""
+#     f = ""
+#     for j in splittedTexts[i]:
+#         s += j + " "
+#     for k in filteredTexts[i]:
+#         f += k + " "
+#     print("Splitted: " + s)
+#     print("Filtered: " + f)
+
+# ---- remove empty element
+
+allFilteredTexts = []
+allTarget = []
+
+for i in range(0, len(filteredTexts)):
+    if len(filteredTexts[i]) > 0:
+        allFilteredTexts.append(filteredTexts[i])
+        allTarget.append(target[i])
+
+# for i in range(0, 15):
+#     s = ""
+#     f = ""
+#     for j in splittedTexts[i]:
+#         s += j + " "
+#     for k in allFilteredTexts[i]:
+#         f += k + " "
+#     print("Splitted: " + s)
+#     print("Splitted target: " + target[0])
+#     print("allFilteredTexts: " + f)
+#     print("allFilteredTexts target: " + allTarget[0])
+
+# ------------------------------------------ MAKE WORD2VEC --------------------------------------------#
+
+model = Word2Vec(allFilteredTexts, min_count=1, size= 200, workers=3, window = 5, sg = 1)
+
+allFilteredTexts
+
+model["este"]
+model.similarity("este", "éjszaka")
+model.similarity("este", "tegnap")
+model.similarity("este", "online")
+
+model.most_similar('este')[:5]
+
+def display_closestwords_tsnescatterplot(model, word, size):
+    arr = np.empty((0,size), dtype='f')
+    word_labels = [word]
+
+    close_words = model.similar_by_word(word)
+    arr = np.append(arr, np.array([model[word]]), axis=0)
+    for wrd_score in close_words:
+        wrd_vector = model[wrd_score[0]]
+        word_labels.append(wrd_score[0])
+        arr = np.append(arr, np.array([wrd_vector]), axis=0)    
+    
+    tsne = TSNE(n_components=2, random_state=0)
+    np.set_printoptions(suppress=True)
+    Y = tsne.fit_transform(arr)
+    
+    x_coords = Y[:, 0]
+    y_coords = Y[:, 1]
+    plt.scatter(x_coords, y_coords)
+    
+    for label, x, y in zip(word_labels, x_coords, y_coords):
+        plt.annotate(label, xy=(x, y), xytext=(0, 0), textcoords='offset points')
+    
+    plt.xlim(x_coords.min()+0.00005, x_coords.max()+0.00005)
+    plt.ylim(y_coords.min()+0.00005, y_coords.max()+0.00005)
+    plt.show()
 
 
+from sklearn.manifold import TSNE
+from matplotlib import pyplot as plt
+
+allFilteredTexts
+
+display_closestwords_tsnescatterplot(model, 'este', 200) 
+display_closestwords_tsnescatterplot(model, 'óra', 200) 
+display_closestwords_tsnescatterplot(model, 'online', 200) 
+display_closestwords_tsnescatterplot(model, 'hülye', 200) 
 
 
-
-
-
-
-
+similarity = model.wmdistance(allFilteredTexts[0], allFilteredTexts[0])
+print("{:.4f}".format(similarity))
 
 
 
