@@ -1,0 +1,87 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 98.13 
+tiers? <exists> 
+size = 3
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "erzelem" 
+        xmin = 0 
+        xmax = 98.13 
+        intervals: size = 5 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.6 
+            text = "U" 
+        intervals [2]:
+            xmin = 0.6 
+            xmax = 1.18 
+            text = "N" 
+        intervals [3]:
+            xmin = 1.18 
+            xmax = 2.338878371306102 
+            text = "U" 
+        intervals [4]:
+            xmin = 2.338878371306102 
+            xmax = 2.97 
+            text = "N" 
+        intervals [5]:
+            xmin = 2.97 
+            xmax = 98.13 
+            text = "U" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "diszpecser" 
+        xmin = 0 
+        xmax = 98.13 
+        intervals: size = 5 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.6 
+            text = "df*" 
+        intervals [2]:
+            xmin = 0.6 
+            xmax = 1.18 
+            text = "" 
+        intervals [3]:
+            xmin = 1.18 
+            xmax = 2.338878371306102 
+            text = "" 
+        intervals [4]:
+            xmin = 2.338878371306102 
+            xmax = 2.97 
+            text = "" 
+        intervals [5]:
+            xmin = 2.97 
+            xmax = 98.13 
+            text = "" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "ugyfel" 
+        xmin = 0 
+        xmax = 98.13 
+        intervals: size = 5 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.6 
+            text = "nu*" 
+        intervals [2]:
+            xmin = 0.6 
+            xmax = 1.18 
+            text = "halló!" 
+        intervals [3]:
+            xmin = 1.18 
+            xmax = 2.338878371306102 
+            text = "" 
+        intervals [4]:
+            xmin = 2.338878371306102 
+            xmax = 2.97 
+            text = "halló!" 
+        intervals [5]:
+            xmin = 2.97 
+            xmax = 98.13 
+            text = "" 
+

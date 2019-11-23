@@ -1,0 +1,99 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 13.99 
+tiers? <exists> 
+size = 3
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "erzelem" 
+        xmin = 0 
+        xmax = 13.99 
+        intervals: size = 6 
+        intervals [1]:
+            xmin = 0 
+            xmax = 3.96 
+            text = "U" 
+        intervals [2]:
+            xmin = 3.96 
+            xmax = 5.681653869272237 
+            text = "_ANONYMIZED_"
+        intervals [3]:
+            xmin = 5.681653869272237 
+            xmax = 6.190875 
+            text = "N" 
+        intervals [4]:
+            xmin = 6.190875 
+            xmax = 10.187666950134773 
+            text = "_ANONYMIZED_"
+        intervals [5]:
+            xmin = 10.187666950134773 
+            xmax = 10.97 
+            text = "U" 
+        intervals [6]:
+            xmin = 10.97 
+            xmax = 13.99 
+            text = "N" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "diszpecser" 
+        xmin = 0 
+        xmax = 13.99 
+        intervals: size = 6 
+        intervals [1]:
+            xmin = 0 
+            xmax = 3.96 
+            text = "dn*" 
+        intervals [2]:
+            xmin = 3.96 
+            xmax = 5.681653869272237 
+            text = "_ANONYMIZED_"
+        intervals [3]:
+            xmin = 5.681653869272237 
+            xmax = 6.190875 
+            text = "((hetek))" 
+        intervals [4]:
+            xmin = 6.190875 
+            xmax = 10.187666950134773 
+            text = "_ANONYMIZED_"
+        intervals [5]:
+            xmin = 10.187666950134773 
+            xmax = 10.97 
+            text = "" 
+        intervals [6]:
+            xmin = 10.97 
+            xmax = 13.99 
+            text = "" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "ugyfel" 
+        xmin = 0 
+        xmax = 13.99 
+        intervals: size = 6 
+        intervals [1]:
+            xmin = 0 
+            xmax = 3.96 
+            text = "un*" 
+        intervals [2]:
+            xmin = 3.96 
+            xmax = 5.681653869272237 
+            text = "_ANONYMIZED_"
+        intervals [3]:
+            xmin = 5.681653869272237 
+            xmax = 6.190875 
+            text = "((jó napot))" 
+        intervals [4]:
+            xmin = 6.190875 
+            xmax = 10.187666950134773 
+            text = "_ANONYMIZED_"
+        intervals [5]:
+            xmin = 10.187666950134773 
+            xmax = 10.97 
+            text = "" 
+        intervals [6]:
+            xmin = 10.97 
+            xmax = 13.99 
+            text = "szerzõdést tehát megszüntetni egy vonalas telefonszámot." 
+

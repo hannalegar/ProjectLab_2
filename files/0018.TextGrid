@@ -1,0 +1,159 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 106.01 
+tiers? <exists> 
+size = 3
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "erzelem" 
+        xmin = 0 
+        xmax = 106.01 
+        intervals: size = 11 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.69 
+            text = "U" 
+        intervals [2]:
+            xmin = 1.69 
+            xmax = 2.17 
+            text = "N" 
+        intervals [3]:
+            xmin = 2.17 
+            xmax = 2.41 
+            text = "U" 
+        intervals [4]:
+            xmin = 2.41 
+            xmax = 5.35 
+            text = "_ANONYMIZED_"
+        intervals [5]:
+            xmin = 5.35 
+            xmax = 6.3 
+            text = "U" 
+        intervals [6]:
+            xmin = 6.3 
+            xmax = 10.44 
+            text = "N" 
+        intervals [7]:
+            xmin = 10.44 
+            xmax = 10.76 
+            text = "U" 
+        intervals [8]:
+            xmin = 10.76 
+            xmax = 11.66 
+            text = "N" 
+        intervals [9]:
+            xmin = 11.66 
+            xmax = 11.95 
+            text = "U" 
+        intervals [10]:
+            xmin = 11.95 
+            xmax = 14.27 
+            text = "N" 
+        intervals [11]:
+            xmin = 14.27 
+            xmax = 106.01 
+            text = "U" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "diszpecser" 
+        xmin = 0 
+        xmax = 106.01 
+        intervals: size = 11 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.69 
+            text = "dn*" 
+        intervals [2]:
+            xmin = 1.69 
+            xmax = 2.17 
+            text = "" 
+        intervals [3]:
+            xmin = 2.17 
+            xmax = 2.41 
+            text = "" 
+        intervals [4]:
+            xmin = 2.41 
+            xmax = 5.35 
+            text = "_ANONYMIZED_"
+        intervals [5]:
+            xmin = 5.35 
+            xmax = 6.3 
+            text = "" 
+        intervals [6]:
+            xmin = 6.3 
+            xmax = 10.44 
+            text = "INTERNET-et szeretnék ajánlani együtt a telefon elõfizetéssel. érdekelné-e?" 
+        intervals [7]:
+            xmin = 10.44 
+            xmax = 10.76 
+            text = "" 
+        intervals [8]:
+            xmin = 10.76 
+            xmax = 11.66 
+            text = "" 
+        intervals [9]:
+            xmin = 11.66 
+            xmax = 11.95 
+            text = "" 
+        intervals [10]:
+            xmin = 11.95 
+            xmax = 14.27 
+            text = "((köszönöm szépen. viszonthallásra.))" 
+        intervals [11]:
+            xmin = 14.27 
+            xmax = 106.01 
+            text = "" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "ugyfel" 
+        xmin = 0 
+        xmax = 106.01 
+        intervals: size = 11 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.69 
+            text = "nu*" 
+        intervals [2]:
+            xmin = 1.69 
+            xmax = 2.17 
+            text = "halló!" 
+        intervals [3]:
+            xmin = 2.17 
+            xmax = 2.41 
+            text = "" 
+        intervals [4]:
+            xmin = 2.41 
+            xmax = 5.35 
+            text = "_ANONYMIZED_"
+        intervals [5]:
+            xmin = 5.35 
+            xmax = 6.3 
+            text = "" 
+        intervals [6]:
+            xmin = 6.3 
+            xmax = 10.44 
+            text = "" 
+        intervals [7]:
+            xmin = 10.44 
+            xmax = 10.76 
+            text = "" 
+        intervals [8]:
+            xmin = 10.76 
+            xmax = 11.66 
+            text = "köszönöm, nem." 
+        intervals [9]:
+            xmin = 11.66 
+            xmax = 11.95 
+            text = "" 
+        intervals [10]:
+            xmin = 11.95 
+            xmax = 14.27 
+            text = "((viszonthallásra.))" 
+        intervals [11]:
+            xmin = 14.27 
+            xmax = 106.01 
+            text = "" 
+

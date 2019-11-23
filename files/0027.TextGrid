@@ -1,0 +1,135 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 107.81 
+tiers? <exists> 
+size = 3
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "erzelem" 
+        xmin = 0 
+        xmax = 107.81 
+        intervals: size = 9 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.99 
+            text = "U" 
+        intervals [2]:
+            xmin = 1.99 
+            xmax = 6.49 
+            text = "_ANONYMIZED_"
+        intervals [3]:
+            xmin = 6.49 
+            xmax = 7.18 
+            text = "U" 
+        intervals [4]:
+            xmin = 7.18 
+            xmax = 8.48 
+            text = "N" 
+        intervals [5]:
+            xmin = 8.48 
+            xmax = 9.2 
+            text = "U" 
+        intervals [6]:
+            xmin = 9.2 
+            xmax = 13.351514566728467 
+            text = "N" 
+        intervals [7]:
+            xmin = 13.351514566728467 
+            xmax = 13.491334778271726 
+            text = "U" 
+        intervals [8]:
+            xmin = 13.491334778271726 
+            xmax = 16.4 
+            text = "N" 
+        intervals [9]:
+            xmin = 16.4 
+            xmax = 107.81 
+            text = "U" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "diszpecser" 
+        xmin = 0 
+        xmax = 107.81 
+        intervals: size = 9 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.99 
+            text = "dn*" 
+        intervals [2]:
+            xmin = 1.99 
+            xmax = 6.49 
+            text = "_ANONYMIZED_"
+        intervals [3]:
+            xmin = 6.49 
+            xmax = 7.18 
+            text = "" 
+        intervals [4]:
+            xmin = 7.18 
+            xmax = 8.48 
+            text = "" 
+        intervals [5]:
+            xmin = 8.48 
+            xmax = 9.2 
+            text = "" 
+        intervals [6]:
+            xmin = 9.2 
+            xmax = 13.351514566728467 
+            text = "azért telefonálok, érdeklõdnék, hogy számítógéppel ((rendelkeznek-e?))" 
+        intervals [7]:
+            xmin = 13.351514566728467 
+            xmax = 13.491334778271726 
+            text = "" 
+        intervals [8]:
+            xmin = 13.491334778271726 
+            xmax = 16.4 
+            text = "((köszönöm szépen a kért türelmét. viszonthallásra.))" 
+        intervals [9]:
+            xmin = 16.4 
+            xmax = 107.81 
+            text = "" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "ugyfel" 
+        xmin = 0 
+        xmax = 107.81 
+        intervals: size = 9 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.99 
+            text = "un*" 
+        intervals [2]:
+            xmin = 1.99 
+            xmax = 6.49 
+            text = "_ANONYMIZED_"
+        intervals [3]:
+            xmin = 6.49 
+            xmax = 7.18 
+            text = "" 
+        intervals [4]:
+            xmin = 7.18 
+            xmax = 8.48 
+            text = "milyen ügyben keresi?" 
+        intervals [5]:
+            xmin = 8.48 
+            xmax = 9.2 
+            text = "" 
+        intervals [6]:
+            xmin = 9.2 
+            xmax = 13.351514566728467 
+            text = "((nem, nincsen.))" 
+        intervals [7]:
+            xmin = 13.351514566728467 
+            xmax = 13.491334778271726 
+            text = "" 
+        intervals [8]:
+            xmin = 13.491334778271726 
+            xmax = 16.4 
+            text = "((kérem. viszont hallás.))" 
+        intervals [9]:
+            xmin = 16.4 
+            xmax = 107.81 
+            text = "" 
+

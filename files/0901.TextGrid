@@ -1,0 +1,183 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 29.33 
+tiers? <exists> 
+size = 3
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "erzelem" 
+        xmin = 0 
+        xmax = 29.33 
+        intervals: size = 13 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.9789547877358482 
+            text = "U" 
+        intervals [2]:
+            xmin = 1.9789547877358482 
+            xmax = 4.33 
+            text = "_ANONYMIZED_"
+        intervals [3]:
+            xmin = 4.33 
+            xmax = 4.541645749999998 
+            text = "U" 
+        intervals [4]:
+            xmin = 4.541645749999998 
+            xmax = 11.28 
+            text = "N" 
+        intervals [5]:
+            xmin = 11.28 
+            xmax = 11.48 
+            text = "U" 
+        intervals [6]:
+            xmin = 11.48 
+            xmax = 14.76 
+            text = "N" 
+        intervals [7]:
+            xmin = 14.76 
+            xmax = 16.11 
+            text = "U" 
+        intervals [8]:
+            xmin = 16.11 
+            xmax = 17.33 
+            text = "N" 
+        intervals [9]:
+            xmin = 17.33 
+            xmax = 17.98 
+            text = "U" 
+        intervals [10]:
+            xmin = 17.98 
+            xmax = 26.22052445933308 
+            text = "N	" 
+        intervals [11]:
+            xmin = 26.22052445933308 
+            xmax = 27.111625 
+            text = "N" 
+        intervals [12]:
+            xmin = 27.111625 
+            xmax = 28.485863232820353 
+            text = "N" 
+        intervals [13]:
+            xmin = 28.485863232820353 
+            xmax = 29.33 
+            text = "U" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "diszpecser" 
+        xmin = 0 
+        xmax = 29.33 
+        intervals: size = 13 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.9789547877358482 
+            text = "dn*" 
+        intervals [2]:
+            xmin = 1.9789547877358482 
+            xmax = 4.33 
+            text = "_ANONYMIZED_"
+        intervals [3]:
+            xmin = 4.33 
+            xmax = 4.541645749999998 
+            text = "" 
+        intervals [4]:
+            xmin = 4.541645749999998 
+            xmax = 11.28 
+            text = "" 
+        intervals [5]:
+            xmin = 11.28 
+            xmax = 11.48 
+            text = "" 
+        intervals [6]:
+            xmin = 11.48 
+            xmax = 14.76 
+            text = "nem, sajnos. ezt a tizenhét tizen tetszik tudni lekérdezni." 
+        intervals [7]:
+            xmin = 14.76 
+            xmax = 16.11 
+            text = "" 
+        intervals [8]:
+            xmin = 16.11 
+            xmax = 17.33 
+            text = "" 
+        intervals [9]:
+            xmin = 17.33 
+            xmax = 17.98 
+            text = "" 
+        intervals [10]:
+            xmin = 17.98 
+            xmax = 26.22052445933308 
+            text = "körülbelül ((se rese)) tudom megmodntani. mint mondtam a tizenhét tizes telefonszám erre a célra szolgál. ezt föl kell hívni és akkor megmondja, hogy az akitálsi egyenlege mennyi." 
+        intervals [11]:
+            xmin = 26.22052445933308 
+            xmax = 27.111625 
+            text = "" 
+        intervals [12]:
+            xmin = 27.111625 
+            xmax = 28.485863232820353 
+            text = "kérem. viszonthallásra." 
+        intervals [13]:
+            xmin = 28.485863232820353 
+            xmax = 29.33 
+            text = "" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "ugyfel" 
+        xmin = 0 
+        xmax = 29.33 
+        intervals: size = 13 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.9789547877358482 
+            text = "un*" 
+        intervals [2]:
+            xmin = 1.9789547877358482 
+            xmax = 4.33 
+            text = "_ANONYMIZED_"
+        intervals [3]:
+            xmin = 4.33 
+            xmax = 4.541645749999998 
+            text = "" 
+        intervals [4]:
+            xmin = 4.541645749999998 
+            xmax = 11.28 
+            text = "haló! jó napot kívánok. tessék mondani, a telefonszámlát nem tudja megmondani nekem körülbelülre, hogy milyen összegnél tartunk." 
+        intervals [5]:
+            xmin = 11.28 
+            xmax = 11.48 
+            text = "" 
+        intervals [6]:
+            xmin = 11.48 
+            xmax = 14.76 
+            text = "" 
+        intervals [7]:
+            xmin = 14.76 
+            xmax = 16.11 
+            text = "" 
+        intervals [8]:
+            xmin = 16.11 
+            xmax = 17.33 
+            text = "és körülbelülre se?" 
+        intervals [9]:
+            xmin = 17.33 
+            xmax = 17.98 
+            text = "" 
+        intervals [10]:
+            xmin = 17.98 
+            xmax = 26.22052445933308 
+            text = "" 
+        intervals [11]:
+            xmin = 26.22052445933308 
+            xmax = 27.111625 
+            text = "köszönöm szépen. " 
+        intervals [12]:
+            xmin = 27.111625 
+            xmax = 28.485863232820353 
+            text = "" 
+        intervals [13]:
+            xmin = 28.485863232820353 
+            xmax = 29.33 
+            text = "" 
+

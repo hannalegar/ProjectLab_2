@@ -1,0 +1,135 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 66.41 
+tiers? <exists> 
+size = 3
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "erzelem" 
+        xmin = 0 
+        xmax = 66.41 
+        intervals: size = 9 
+        intervals [1]:
+            xmin = 0 
+            xmax = 2.35 
+            text = "U" 
+        intervals [2]:
+            xmin = 2.35 
+            xmax = 2.82 
+            text = "N" 
+        intervals [3]:
+            xmin = 2.82 
+            xmax = 4.456571888355184 
+            text = "U" 
+        intervals [4]:
+            xmin = 4.456571888355184 
+            xmax = 5.03 
+            text = "E" 
+        intervals [5]:
+            xmin = 5.03 
+            xmax = 7.09 
+            text = "U" 
+        intervals [6]:
+            xmin = 7.09 
+            xmax = 7.68 
+            text = "E" 
+        intervals [7]:
+            xmin = 7.68 
+            xmax = 8.449936806219162 
+            text = "U" 
+        intervals [8]:
+            xmin = 8.449936806219162 
+            xmax = 9.122409756190043 
+            text = "N" 
+        intervals [9]:
+            xmin = 9.122409756190043 
+            xmax = 66.41 
+            text = "U" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "diszpecser" 
+        xmin = 0 
+        xmax = 66.41 
+        intervals: size = 9 
+        intervals [1]:
+            xmin = 0 
+            xmax = 2.35 
+            text = "dn*" 
+        intervals [2]:
+            xmin = 2.35 
+            xmax = 2.82 
+            text = "halló!" 
+        intervals [3]:
+            xmin = 2.82 
+            xmax = 4.456571888355184 
+            text = "" 
+        intervals [4]:
+            xmin = 4.456571888355184 
+            xmax = 5.03 
+            text = "halló!" 
+        intervals [5]:
+            xmin = 5.03 
+            xmax = 7.09 
+            text = "" 
+        intervals [6]:
+            xmin = 7.09 
+            xmax = 7.68 
+            text = "halló!" 
+        intervals [7]:
+            xmin = 7.68 
+            xmax = 8.449936806219162 
+            text = "" 
+        intervals [8]:
+            xmin = 8.449936806219162 
+            xmax = 9.122409756190043 
+            text = "((ez most mi?))" 
+        intervals [9]:
+            xmin = 9.122409756190043 
+            xmax = 66.41 
+            text = "" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "ugyfel" 
+        xmin = 0 
+        xmax = 66.41 
+        intervals: size = 9 
+        intervals [1]:
+            xmin = 0 
+            xmax = 2.35 
+            text = "" 
+        intervals [2]:
+            xmin = 2.35 
+            xmax = 2.82 
+            text = "" 
+        intervals [3]:
+            xmin = 2.82 
+            xmax = 4.456571888355184 
+            text = "" 
+        intervals [4]:
+            xmin = 4.456571888355184 
+            xmax = 5.03 
+            text = "" 
+        intervals [5]:
+            xmin = 5.03 
+            xmax = 7.09 
+            text = "" 
+        intervals [6]:
+            xmin = 7.09 
+            xmax = 7.68 
+            text = "" 
+        intervals [7]:
+            xmin = 7.68 
+            xmax = 8.449936806219162 
+            text = "" 
+        intervals [8]:
+            xmin = 8.449936806219162 
+            xmax = 9.122409756190043 
+            text = "" 
+        intervals [9]:
+            xmin = 9.122409756190043 
+            xmax = 66.41 
+            text = "" 
+

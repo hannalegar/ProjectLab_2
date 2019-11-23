@@ -1,0 +1,219 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 113.82 
+tiers? <exists> 
+size = 3
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "erzelem" 
+        xmin = 0 
+        xmax = 113.82 
+        intervals: size = 16 
+        intervals [1]:
+            xmin = 0 
+            xmax = 2.5251125336927225 
+            text = "U" 
+        intervals [2]:
+            xmin = 2.5251125336927225 
+            xmax = 6.703780997304583 
+            text = "_ANONYMIZED_"
+        intervals [3]:
+            xmin = 6.703780997304583 
+            xmax = 7.408562980943612 
+            text = "N" 
+        intervals [4]:
+            xmin = 7.408562980943612 
+            xmax = 7.63 
+            text = "U" 
+        intervals [5]:
+            xmin = 7.63 
+            xmax = 11.648323088760325 
+            text = "N" 
+        intervals [6]:
+            xmin = 11.648323088760325 
+            xmax = 11.95 
+            text = "U" 
+        intervals [7]:
+            xmin = 11.95 
+            xmax = 13.13 
+            text = "N" 
+        intervals [8]:
+            xmin = 13.13 
+            xmax = 13.39 
+            text = "U" 
+        intervals [9]:
+            xmin = 13.39 
+            xmax = 13.88 
+            text = "N" 
+        intervals [10]:
+            xmin = 13.88 
+            xmax = 14.19 
+            text = "U" 
+        intervals [11]:
+            xmin = 14.19 
+            xmax = 17.65 
+            text = "N" 
+        intervals [12]:
+            xmin = 17.65 
+            xmax = 17.827316841255854 
+            text = "U" 
+        intervals [13]:
+            xmin = 17.827316841255854 
+            xmax = 19.37 
+            text = "E" 
+        intervals [14]:
+            xmin = 19.37 
+            xmax = 19.6 
+            text = "U" 
+        intervals [15]:
+            xmin = 19.6 
+            xmax = 21.263057164043325 
+            text = "N" 
+        intervals [16]:
+            xmin = 21.263057164043325 
+            xmax = 113.82 
+            text = "U" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "diszpecser" 
+        xmin = 0 
+        xmax = 113.82 
+        intervals: size = 16 
+        intervals [1]:
+            xmin = 0 
+            xmax = 2.5251125336927225 
+            text = "dn*" 
+        intervals [2]:
+            xmin = 2.5251125336927225 
+            xmax = 6.703780997304583 
+            text = "_ANONYMIZED_"
+        intervals [3]:
+            xmin = 6.703780997304583 
+            xmax = 7.408562980943612 
+            text = "" 
+        intervals [4]:
+            xmin = 7.408562980943612 
+            xmax = 7.63 
+            text = "" 
+        intervals [5]:
+            xmin = 7.63 
+            xmax = 11.648323088760325 
+            text = "azért telefonálok, érdeklõdnék hogy számítógéppel rendelkezik-e." 
+        intervals [6]:
+            xmin = 11.648323088760325 
+            xmax = 11.95 
+            text = "" 
+        intervals [7]:
+            xmin = 11.95 
+            xmax = 13.13 
+            text = "((nem))" 
+        intervals [8]:
+            xmin = 13.13 
+            xmax = 13.39 
+            text = "" 
+        intervals [9]:
+            xmin = 13.39 
+            xmax = 13.88 
+            text = "" 
+        intervals [10]:
+            xmin = 13.88 
+            xmax = 14.19 
+            text = "" 
+        intervals [11]:
+            xmin = 14.19 
+            xmax = 17.65 
+            text = "" 
+        intervals [12]:
+            xmin = 17.65 
+            xmax = 17.827316841255854 
+            text = "" 
+        intervals [13]:
+            xmin = 17.827316841255854 
+            xmax = 19.37 
+            text = "" 
+        intervals [14]:
+            xmin = 19.37 
+            xmax = 19.6 
+            text = "" 
+        intervals [15]:
+            xmin = 19.6 
+            xmax = 21.263057164043325 
+            text = "köszönöm szépen. viszonthallásra." 
+        intervals [16]:
+            xmin = 21.263057164043325 
+            xmax = 113.82 
+            text = "" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "ugyfel" 
+        xmin = 0 
+        xmax = 113.82 
+        intervals: size = 16 
+        intervals [1]:
+            xmin = 0 
+            xmax = 2.5251125336927225 
+            text = "uf*" 
+        intervals [2]:
+            xmin = 2.5251125336927225 
+            xmax = 6.703780997304583 
+            text = "_ANONYMIZED_"
+        intervals [3]:
+            xmin = 6.703780997304583 
+            xmax = 7.408562980943612 
+            text = "én vagyok." 
+        intervals [4]:
+            xmin = 7.408562980943612 
+            xmax = 7.63 
+            text = "" 
+        intervals [5]:
+            xmin = 7.63 
+            xmax = 11.648323088760325 
+            text = "" 
+        intervals [6]:
+            xmin = 11.648323088760325 
+            xmax = 11.95 
+            text = "" 
+        intervals [7]:
+            xmin = 11.95 
+            xmax = 13.13 
+            text = "nem, kérem." 
+        intervals [8]:
+            xmin = 13.13 
+            xmax = 13.39 
+            text = "" 
+        intervals [9]:
+            xmin = 13.39 
+            xmax = 13.88 
+            text = "(())" 
+        intervals [10]:
+            xmin = 13.88 
+            xmax = 14.19 
+            text = "" 
+        intervals [11]:
+            xmin = 14.19 
+            xmax = 17.65 
+            text = "nyolcvankilenc ((éves)) szívbeteg ember vagyok," 
+        intervals [12]:
+            xmin = 17.65 
+            xmax = 17.827316841255854 
+            text = "" 
+        intervals [13]:
+            xmin = 17.827316841255854 
+            xmax = 19.37 
+            text = "hagyjanak már békén." 
+        intervals [14]:
+            xmin = 19.37 
+            xmax = 19.6 
+            text = "" 
+        intervals [15]:
+            xmin = 19.6 
+            xmax = 21.263057164043325 
+            text = "" 
+        intervals [16]:
+            xmin = 21.263057164043325 
+            xmax = 113.82 
+            text = "" 
+

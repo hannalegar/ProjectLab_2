@@ -1,0 +1,135 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 23.85 
+tiers? <exists> 
+size = 3
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "erzelem" 
+        xmin = 0 
+        xmax = 23.85 
+        intervals: size = 9 
+        intervals [1]:
+            xmin = 0 
+            xmax = 11.35 
+            text = "U" 
+        intervals [2]:
+            xmin = 11.35 
+            xmax = 11.854678928571431 
+            text = "N" 
+        intervals [3]:
+            xmin = 11.854678928571431 
+            xmax = 16.91 
+            text = "N" 
+        intervals [4]:
+            xmin = 16.91 
+            xmax = 17.09 
+            text = "U" 
+        intervals [5]:
+            xmin = 17.09 
+            xmax = 20.39521339285714 
+            text = "N" 
+        intervals [6]:
+            xmin = 20.39521339285714 
+            xmax = 21.8965 
+            text = "N" 
+        intervals [7]:
+            xmin = 21.8965 
+            xmax = 22.342784464285714 
+            text = "N" 
+        intervals [8]:
+            xmin = 22.342784464285714 
+            xmax = 23.195249999999998 
+            text = "N" 
+        intervals [9]:
+            xmin = 23.195249999999998 
+            xmax = 23.85 
+            text = "U" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "diszpecser1" 
+        xmin = 0 
+        xmax = 23.85 
+        intervals: size = 9 
+        intervals [1]:
+            xmin = 0 
+            xmax = 11.35 
+            text = "dn*" 
+        intervals [2]:
+            xmin = 11.35 
+            xmax = 11.854678928571431 
+            text = "" 
+        intervals [3]:
+            xmin = 11.854678928571431 
+            xmax = 16.91 
+            text = "szia, én is itt vagyok, azt mondta, hogy neki délután egyig van otthon, tehát délután egyig jó." 
+        intervals [4]:
+            xmin = 16.91 
+            xmax = 17.09 
+            text = "" 
+        intervals [5]:
+            xmin = 17.09 
+            xmax = 20.39521339285714 
+            text = "" 
+        intervals [6]:
+            xmin = 20.39521339285714 
+            xmax = 21.8965 
+            text = "és nagyon szépen köszönöm!" 
+        intervals [7]:
+            xmin = 21.8965 
+            xmax = 22.342784464285714 
+            text = "" 
+        intervals [8]:
+            xmin = 22.342784464285714 
+            xmax = 23.195249999999998 
+            text = "((szia-szia!))" 
+        intervals [9]:
+            xmin = 23.195249999999998 
+            xmax = 23.85 
+            text = "" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "diszpecser2" 
+        xmin = 0 
+        xmax = 23.85 
+        intervals: size = 9 
+        intervals [1]:
+            xmin = 0 
+            xmax = 11.35 
+            text = "df*" 
+        intervals [2]:
+            xmin = 11.35 
+            xmax = 11.854678928571431 
+            text = "itt vagyok!" 
+        intervals [3]:
+            xmin = 11.854678928571431 
+            xmax = 16.91 
+            text = "" 
+        intervals [4]:
+            xmin = 16.91 
+            xmax = 17.09 
+            text = "" 
+        intervals [5]:
+            xmin = 17.09 
+            xmax = 20.39521339285714 
+            text = "hát akkor még lehet, hogy az belefér. oké. jó, jó, jó." 
+        intervals [6]:
+            xmin = 20.39521339285714 
+            xmax = 21.8965 
+            text = "" 
+        intervals [7]:
+            xmin = 21.8965 
+            xmax = 22.342784464285714 
+            text = "köszi!" 
+        intervals [8]:
+            xmin = 22.342784464285714 
+            xmax = 23.195249999999998 
+            text = "((szia!))" 
+        intervals [9]:
+            xmin = 23.195249999999998 
+            xmax = 23.85 
+            text = "" 
+

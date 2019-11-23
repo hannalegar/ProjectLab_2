@@ -1,0 +1,195 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 80.09 
+tiers? <exists> 
+size = 3
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "erzelem" 
+        xmin = 0 
+        xmax = 80.09 
+        intervals: size = 14 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.3 
+            text = "U" 
+        intervals [2]:
+            xmin = 1.3 
+            xmax = 4.076840296495957 
+            text = "_ANONYMIZED_"
+        intervals [3]:
+            xmin = 4.076840296495957 
+            xmax = 4.51670013477089 
+            text = "U" 
+        intervals [4]:
+            xmin = 4.51670013477089 
+            xmax = 4.974887466307278 
+            text = "N" 
+        intervals [5]:
+            xmin = 4.974887466307278 
+            xmax = 5.5 
+            text = "U" 
+        intervals [6]:
+            xmin = 5.5 
+            xmax = 8.934026287723452 
+            text = "N" 
+        intervals [7]:
+            xmin = 8.934026287723452 
+            xmax = 9.45 
+            text = "U" 
+        intervals [8]:
+            xmin = 9.45 
+            xmax = 10.36 
+            text = "N" 
+        intervals [9]:
+            xmin = 10.36 
+            xmax = 10.688299865229112 
+            text = "U" 
+        intervals [10]:
+            xmin = 10.688299865229112 
+            xmax = 13.22 
+            text = "N" 
+        intervals [11]:
+            xmin = 13.22 
+            xmax = 13.681790431266847 
+            text = "N" 
+        intervals [12]:
+            xmin = 13.681790431266847 
+            xmax = 14.066667789757414 
+            text = "U" 
+        intervals [13]:
+            xmin = 14.066667789757414 
+            xmax = 14.98304245283019 
+            text = "N" 
+        intervals [14]:
+            xmin = 14.98304245283019 
+            xmax = 80.09 
+            text = "U" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "diszpecser" 
+        xmin = 0 
+        xmax = 80.09 
+        intervals: size = 14 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.3 
+            text = "df*" 
+        intervals [2]:
+            xmin = 1.3 
+            xmax = 4.076840296495957 
+            text = "_ANONYMIZED_"
+        intervals [3]:
+            xmin = 4.076840296495957 
+            xmax = 4.51670013477089 
+            text = "" 
+        intervals [4]:
+            xmin = 4.51670013477089 
+            xmax = 4.974887466307278 
+            text = "" 
+        intervals [5]:
+            xmin = 4.974887466307278 
+            xmax = 5.5 
+            text = "" 
+        intervals [6]:
+            xmin = 5.5 
+            xmax = 8.934026287723452 
+            text = "az ügyben kerestem volna önt, hogy INTERNET szolgáltatás érdekelné-e önöket." 
+        intervals [7]:
+            xmin = 8.934026287723452 
+            xmax = 9.45 
+            text = "" 
+        intervals [8]:
+            xmin = 9.45 
+            xmax = 10.36 
+            text = "" 
+        intervals [9]:
+            xmin = 10.36 
+            xmax = 10.688299865229112 
+            text = "" 
+        intervals [10]:
+            xmin = 10.688299865229112 
+            xmax = 13.22 
+            text = "akkor viszont nem zavarnám. kellemes napot kívánok ((önök))" 
+        intervals [11]:
+            xmin = 13.22 
+            xmax = 13.681790431266847 
+            text = "((nek))" 
+        intervals [12]:
+            xmin = 13.681790431266847 
+            xmax = 14.066667789757414 
+            text = "" 
+        intervals [13]:
+            xmin = 14.066667789757414 
+            xmax = 14.98304245283019 
+            text = "viszonthallásra." 
+        intervals [14]:
+            xmin = 14.98304245283019 
+            xmax = 80.09 
+            text = "" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "ugyfel" 
+        xmin = 0 
+        xmax = 80.09 
+        intervals: size = 14 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.3 
+            text = "un*" 
+        intervals [2]:
+            xmin = 1.3 
+            xmax = 4.076840296495957 
+            text = "_ANONYMIZED_"
+        intervals [3]:
+            xmin = 4.076840296495957 
+            xmax = 4.51670013477089 
+            text = "" 
+        intervals [4]:
+            xmin = 4.51670013477089 
+            xmax = 4.974887466307278 
+            text = "igen." 
+        intervals [5]:
+            xmin = 4.974887466307278 
+            xmax = 5.5 
+            text = "" 
+        intervals [6]:
+            xmin = 5.5 
+            xmax = 8.934026287723452 
+            text = "" 
+        intervals [7]:
+            xmin = 8.934026287723452 
+            xmax = 9.45 
+            text = "" 
+        intervals [8]:
+            xmin = 9.45 
+            xmax = 10.36 
+            text = "nem kérem!" 
+        intervals [9]:
+            xmin = 10.36 
+            xmax = 10.688299865229112 
+            text = "" 
+        intervals [10]:
+            xmin = 10.688299865229112 
+            xmax = 13.22 
+            text = "" 
+        intervals [11]:
+            xmin = 13.22 
+            xmax = 13.681790431266847 
+            text = "((köszönöm.))" 
+        intervals [12]:
+            xmin = 13.681790431266847 
+            xmax = 14.066667789757414 
+            text = "" 
+        intervals [13]:
+            xmin = 14.066667789757414 
+            xmax = 14.98304245283019 
+            text = "" 
+        intervals [14]:
+            xmin = 14.98304245283019 
+            xmax = 80.09 
+            text = "" 
+

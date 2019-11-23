@@ -1,0 +1,219 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 107.37 
+tiers? <exists> 
+size = 3
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "erzelem" 
+        xmin = 0 
+        xmax = 107.37 
+        intervals: size = 16 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.5039020702981811 
+            text = "U" 
+        intervals [2]:
+            xmin = 1.5039020702981811 
+            xmax = 2.06 
+            text = "N" 
+        intervals [3]:
+            xmin = 2.06 
+            xmax = 2.39 
+            text = "U" 
+        intervals [4]:
+            xmin = 2.39 
+            xmax = 3.0044391909500994 
+            text = "N" 
+        intervals [5]:
+            xmin = 3.0044391909500994 
+            xmax = 7.481848341282436 
+            text = "_ANONYMIZED_"
+        intervals [6]:
+            xmin = 7.481848341282436 
+            xmax = 8.7 
+            text = "U" 
+        intervals [7]:
+            xmin = 8.7 
+            xmax = 9.817361762942277 
+            text = "N" 
+        intervals [8]:
+            xmin = 9.817361762942277 
+            xmax = 11.62042652888692 
+            text = "N" 
+        intervals [9]:
+            xmin = 11.62042652888692 
+            xmax = 12.381184901198829 
+            text = "U" 
+        intervals [10]:
+            xmin = 12.381184901198829 
+            xmax = 12.93 
+            text = "N" 
+        intervals [11]:
+            xmin = 12.93 
+            xmax = 13.107251249901369 
+            text = "U" 
+        intervals [12]:
+            xmin = 13.107251249901369 
+            xmax = 15.031327073963102 
+            text = "N" 
+        intervals [13]:
+            xmin = 15.031327073963102 
+            xmax = 15.4 
+            text = "U" 
+        intervals [14]:
+            xmin = 15.4 
+            xmax = 15.999415538899823 
+            text = "N" 
+        intervals [15]:
+            xmin = 15.999415538899823 
+            xmax = 19.230410790626127 
+            text = "N" 
+        intervals [16]:
+            xmin = 19.230410790626127 
+            xmax = 107.37 
+            text = "U" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "diszpecser" 
+        xmin = 0 
+        xmax = 107.37 
+        intervals: size = 16 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.5039020702981811 
+            text = "dn*" 
+        intervals [2]:
+            xmin = 1.5039020702981811 
+            xmax = 2.06 
+            text = "halló!" 
+        intervals [3]:
+            xmin = 2.06 
+            xmax = 2.39 
+            text = "" 
+        intervals [4]:
+            xmin = 2.39 
+            xmax = 3.0044391909500994 
+            text = "" 
+        intervals [5]:
+            xmin = 3.0044391909500994 
+            xmax = 7.481848341282436 
+            text = "_ANONYMIZED_"
+        intervals [6]:
+            xmin = 7.481848341282436 
+            xmax = 8.7 
+            text = "" 
+        intervals [7]:
+            xmin = 8.7 
+            xmax = 9.817361762942277 
+            text = "" 
+        intervals [8]:
+            xmin = 9.817361762942277 
+            xmax = 11.62042652888692 
+            text = "INTERNET szolgáltató vagyunk." 
+        intervals [9]:
+            xmin = 11.62042652888692 
+            xmax = 12.381184901198829 
+            text = "" 
+        intervals [10]:
+            xmin = 12.381184901198829 
+            xmax = 12.93 
+            text = "((van a))" 
+        intervals [11]:
+            xmin = 12.93 
+            xmax = 13.107251249901369 
+            text = "" 
+        intervals [12]:
+            xmin = 13.107251249901369 
+            xmax = 15.031327073963102 
+            text = "INTERNET. van számítógépe?" 
+        intervals [13]:
+            xmin = 15.031327073963102 
+            xmax = 15.4 
+            text = "" 
+        intervals [14]:
+            xmin = 15.4 
+            xmax = 15.999415538899823 
+            text = "" 
+        intervals [15]:
+            xmin = 15.999415538899823 
+            xmax = 19.230410790626127 
+            text = "nincs, akkor nem zavarnám. köszönöm szépen. viszonthallásra! " 
+        intervals [16]:
+            xmin = 19.230410790626127 
+            xmax = 107.37 
+            text = "" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "ugyfel" 
+        xmin = 0 
+        xmax = 107.37 
+        intervals: size = 16 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.5039020702981811 
+            text = "un*" 
+        intervals [2]:
+            xmin = 1.5039020702981811 
+            xmax = 2.06 
+            text = "" 
+        intervals [3]:
+            xmin = 2.06 
+            xmax = 2.39 
+            text = "" 
+        intervals [4]:
+            xmin = 2.39 
+            xmax = 3.0044391909500994 
+            text = "halló!" 
+        intervals [5]:
+            xmin = 3.0044391909500994 
+            xmax = 7.481848341282436 
+            text = "_ANONYMIZED_"
+        intervals [6]:
+            xmin = 7.481848341282436 
+            xmax = 8.7 
+            text = "" 
+        intervals [7]:
+            xmin = 8.7 
+            xmax = 9.817361762942277 
+            text = "honnan keres?" 
+        intervals [8]:
+            xmin = 9.817361762942277 
+            xmax = 11.62042652888692 
+            text = "" 
+        intervals [9]:
+            xmin = 11.62042652888692 
+            xmax = 12.381184901198829 
+            text = "" 
+        intervals [10]:
+            xmin = 12.381184901198829 
+            xmax = 12.93 
+            text = "((miylen szo))" 
+        intervals [11]:
+            xmin = 12.93 
+            xmax = 13.107251249901369 
+            text = "" 
+        intervals [12]:
+            xmin = 13.107251249901369 
+            xmax = 15.031327073963102 
+            text = "" 
+        intervals [13]:
+            xmin = 15.031327073963102 
+            xmax = 15.4 
+            text = "" 
+        intervals [14]:
+            xmin = 15.4 
+            xmax = 15.999415538899823 
+            text = "nincsen." 
+        intervals [15]:
+            xmin = 15.999415538899823 
+            xmax = 19.230410790626127 
+            text = "" 
+        intervals [16]:
+            xmin = 19.230410790626127 
+            xmax = 107.37 
+            text = "" 
+

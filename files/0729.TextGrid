@@ -1,0 +1,939 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 128.19 
+tiers? <exists> 
+size = 3
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "erzelem" 
+        xmin = 0 
+        xmax = 128.19 
+        intervals: size = 76 
+        intervals [1]:
+            xmin = 0 
+            xmax = 2.8 
+            text = "U" 
+        intervals [2]:
+            xmin = 2.8 
+            xmax = 5.23 
+            text = "_ANONYMIZED_"
+        intervals [3]:
+            xmin = 5.23 
+            xmax = 5.62 
+            text = "U" 
+        intervals [4]:
+            xmin = 5.62 
+            xmax = 8.77 
+            text = "_ANONYMIZED_"
+        intervals [5]:
+            xmin = 8.77 
+            xmax = 10.15 
+            text = "U" 
+        intervals [6]:
+            xmin = 10.15 
+            xmax = 11.764798042001322 
+            text = "N" 
+        intervals [7]:
+            xmin = 11.764798042001322 
+            xmax = 12.19 
+            text = "U" 
+        intervals [8]:
+            xmin = 12.19 
+            xmax = 13.756385643079492 
+            text = "N" 
+        intervals [9]:
+            xmin = 13.756385643079492 
+            xmax = 14.2 
+            text = "U" 
+        intervals [10]:
+            xmin = 14.2 
+            xmax = 18.93 
+            text = "N" 
+        intervals [11]:
+            xmin = 18.93 
+            xmax = 19.14 
+            text = "U" 
+        intervals [12]:
+            xmin = 19.14 
+            xmax = 21.42 
+            text = "N" 
+        intervals [13]:
+            xmin = 21.42 
+            xmax = 22.13 
+            text = "U" 
+        intervals [14]:
+            xmin = 22.13 
+            xmax = 29.79 
+            text = "N" 
+        intervals [15]:
+            xmin = 29.79 
+            xmax = 30.32 
+            text = "U" 
+        intervals [16]:
+            xmin = 30.32 
+            xmax = 39.38 
+            text = "N" 
+        intervals [17]:
+            xmin = 39.38 
+            xmax = 39.64 
+            text = "U" 
+        intervals [18]:
+            xmin = 39.64 
+            xmax = 42.62 
+            text = "N" 
+        intervals [19]:
+            xmin = 42.62 
+            xmax = 43.11635369495825 
+            text = "U" 
+        intervals [20]:
+            xmin = 43.11635369495825 
+            xmax = 47.43 
+            text = "N" 
+        intervals [21]:
+            xmin = 47.43 
+            xmax = 47.79351993889232 
+            text = "U" 
+        intervals [22]:
+            xmin = 47.79351993889232 
+            xmax = 49.34513500953337 
+            text = "N" 
+        intervals [23]:
+            xmin = 49.34513500953337 
+            xmax = 50.64 
+            text = "N" 
+        intervals [24]:
+            xmin = 50.64 
+            xmax = 51.81 
+            text = "U" 
+        intervals [25]:
+            xmin = 51.81 
+            xmax = 53.010875 
+            text = "N" 
+        intervals [26]:
+            xmin = 53.010875 
+            xmax = 55.3875 
+            text = "N" 
+        intervals [27]:
+            xmin = 55.3875 
+            xmax = 55.58247919068656 
+            text = "U" 
+        intervals [28]:
+            xmin = 55.58247919068656 
+            xmax = 55.99179320685907 
+            text = "N" 
+        intervals [29]:
+            xmin = 55.99179320685907 
+            xmax = 57.87341584836851 
+            text = "N" 
+        intervals [30]:
+            xmin = 57.87341584836851 
+            xmax = 58.099454931926466 
+            text = "U" 
+        intervals [31]:
+            xmin = 58.099454931926466 
+            xmax = 58.810875 
+            text = "N" 
+        intervals [32]:
+            xmin = 58.810875 
+            xmax = 60.695737118470475 
+            text = "_ANONYMIZED_"
+        intervals [33]:
+            xmin = 60.695737118470475 
+            xmax = 63.58 
+            text = "U" 
+        intervals [34]:
+            xmin = 63.58 
+            xmax = 64.51996135353204 
+            text = "N" 
+        intervals [35]:
+            xmin = 64.51996135353204 
+            xmax = 65.4424451810253 
+            text = "U" 
+        intervals [36]:
+            xmin = 65.4424451810253 
+            xmax = 66.83533466889593 
+            text = "_ANONYMIZED_"
+        intervals [37]:
+            xmin = 66.83533466889593 
+            xmax = 67.39 
+            text = "N" 
+        intervals [38]:
+            xmin = 67.39 
+            xmax = 67.66 
+            text = "U" 
+        intervals [39]:
+            xmin = 67.66 
+            xmax = 69.69 
+            text = "_ANONYMIZED_"
+        intervals [40]:
+            xmin = 69.69 
+            xmax = 78.11565801848518 
+            text = "U" 
+        intervals [41]:
+            xmin = 78.11565801848518 
+            xmax = 84.49299970244557 
+            text = "_ANONYMIZED_"
+        intervals [42]:
+            xmin = 84.49299970244557 
+            xmax = 84.71903878600352 
+            text = "U" 
+        intervals [43]:
+            xmin = 84.71903878600352 
+            xmax = 85.35 
+            text = "N" 
+        intervals [44]:
+            xmin = 85.35 
+            xmax = 85.59875846255339 
+            text = "U" 
+        intervals [45]:
+            xmin = 85.59875846255339 
+            xmax = 87.52314525500624 
+            text = "N" 
+        intervals [46]:
+            xmin = 87.52314525500624 
+            xmax = 88.0135 
+            text = "N" 
+        intervals [47]:
+            xmin = 88.0135 
+            xmax = 88.775125 
+            text = "N" 
+        intervals [48]:
+            xmin = 88.775125 
+            xmax = 89.49029619840248 
+            text = "N" 
+        intervals [49]:
+            xmin = 89.49029619840248 
+            xmax = 90.27358369649207 
+            text = "U" 
+        intervals [50]:
+            xmin = 90.27358369649207 
+            xmax = 93.59085997681554 
+            text = "N" 
+        intervals [51]:
+            xmin = 93.59085997681554 
+            xmax = 94.22 
+            text = "U" 
+        intervals [52]:
+            xmin = 94.22 
+            xmax = 95.24256268817975 
+            text = "N" 
+        intervals [53]:
+            xmin = 95.24256268817975 
+            xmax = 96 
+            text = "N" 
+        intervals [54]:
+            xmin = 96 
+            xmax = 96.33 
+            text = "U" 
+        intervals [55]:
+            xmin = 96.33 
+            xmax = 97.15473115179162 
+            text = "N" 
+        intervals [56]:
+            xmin = 97.15473115179162 
+            xmax = 97.29524193346278 
+            text = "U" 
+        intervals [57]:
+            xmin = 97.29524193346278 
+            xmax = 97.71066511405577 
+            text = "N" 
+        intervals [58]:
+            xmin = 97.71066511405577 
+            xmax = 97.91226753993179 
+            text = "U" 
+        intervals [59]:
+            xmin = 97.91226753993179 
+            xmax = 98.372625 
+            text = "V" 
+        intervals [60]:
+            xmin = 98.372625 
+            xmax = 105.83 
+            text = "N" 
+        intervals [61]:
+            xmin = 105.83 
+            xmax = 106.479944961987 
+            text = "N" 
+        intervals [62]:
+            xmin = 106.479944961987 
+            xmax = 108.75569630980645 
+            text = "N" 
+        intervals [63]:
+            xmin = 108.75569630980645 
+            xmax = 110.61288229363396 
+            text = "N" 
+        intervals [64]:
+            xmin = 110.61288229363396 
+            xmax = 114.12034313935096 
+            text = "N" 
+        intervals [65]:
+            xmin = 114.12034313935096 
+            xmax = 114.54187548436445 
+            text = "U" 
+        intervals [66]:
+            xmin = 114.54187548436445 
+            xmax = 117.06496039002484 
+            text = "N" 
+        intervals [67]:
+            xmin = 117.06496039002484 
+            xmax = 117.3 
+            text = "U" 
+        intervals [68]:
+            xmin = 117.3 
+            xmax = 118.53298758207274 
+            text = "N" 
+        intervals [69]:
+            xmin = 118.53298758207274 
+            xmax = 120.05416952277355 
+            text = "N" 
+        intervals [70]:
+            xmin = 120.05416952277355 
+            xmax = 121.28822073571156 
+            text = "N" 
+        intervals [71]:
+            xmin = 121.28822073571156 
+            xmax = 121.53258731253098 
+            text = "U" 
+        intervals [72]:
+            xmin = 121.53258731253098 
+            xmax = 124.28159860958714 
+            text = "N" 
+        intervals [73]:
+            xmin = 124.28159860958714 
+            xmax = 126.08 
+            text = "V" 
+        intervals [74]:
+            xmin = 126.08 
+            xmax = 126.29 
+            text = "U" 
+        intervals [75]:
+            xmin = 126.29 
+            xmax = 127.71 
+            text = "O" 
+        intervals [76]:
+            xmin = 127.71 
+            xmax = 128.19 
+            text = "U" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "diszpecser" 
+        xmin = 0 
+        xmax = 128.19 
+        intervals: size = 76 
+        intervals [1]:
+            xmin = 0 
+            xmax = 2.8 
+            text = "dn*" 
+        intervals [2]:
+            xmin = 2.8 
+            xmax = 5.23 
+            text = "_ANONYMIZED_"
+        intervals [3]:
+            xmin = 5.23 
+            xmax = 5.62 
+            text = "" 
+        intervals [4]:
+            xmin = 5.62 
+            xmax = 8.77 
+            text = "_ANONYMIZED_"
+        intervals [5]:
+            xmin = 8.77 
+            xmax = 10.15 
+            text = "" 
+        intervals [6]:
+            xmin = 10.15 
+            xmax = 11.764798042001322 
+            text = "" 
+        intervals [7]:
+            xmin = 11.764798042001322 
+            xmax = 12.19 
+            text = "" 
+        intervals [8]:
+            xmin = 12.19 
+            xmax = 13.756385643079492 
+            text = "" 
+        intervals [9]:
+            xmin = 13.756385643079492 
+            xmax = 14.2 
+            text = "" 
+        intervals [10]:
+            xmin = 14.2 
+            xmax = 18.93 
+            text = "" 
+        intervals [11]:
+            xmin = 18.93 
+            xmax = 19.14 
+            text = "" 
+        intervals [12]:
+            xmin = 19.14 
+            xmax = 21.42 
+            text = "" 
+        intervals [13]:
+            xmin = 21.42 
+            xmax = 22.13 
+            text = "" 
+        intervals [14]:
+            xmin = 22.13 
+            xmax = 29.79 
+            text = "" 
+        intervals [15]:
+            xmin = 29.79 
+            xmax = 30.32 
+            text = "" 
+        intervals [16]:
+            xmin = 30.32 
+            xmax = 39.38 
+            text = "" 
+        intervals [17]:
+            xmin = 39.38 
+            xmax = 39.64 
+            text = "" 
+        intervals [18]:
+            xmin = 39.64 
+            xmax = 42.62 
+            text = "hát amennyiben szerzõdésszámot tud nekem mondani, akkor igen" 
+        intervals [19]:
+            xmin = 42.62 
+            xmax = 43.11635369495825 
+            text = "" 
+        intervals [20]:
+            xmin = 43.11635369495825 
+            xmax = 47.43 
+            text = "" 
+        intervals [21]:
+            xmin = 47.43 
+            xmax = 47.79351993889232 
+            text = "" 
+        intervals [22]:
+            xmin = 47.79351993889232 
+            xmax = 49.34513500953337 
+            text = "((számlán nincsen))" 
+        intervals [23]:
+            xmin = 49.34513500953337 
+            xmax = 50.64 
+            text = "" 
+        intervals [24]:
+            xmin = 50.64 
+            xmax = 51.81 
+            text = "" 
+        intervals [25]:
+            xmin = 51.81 
+            xmax = 53.010875 
+            text = "" 
+        intervals [26]:
+            xmin = 53.010875 
+            xmax = 55.3875 
+            text = "" 
+        intervals [27]:
+            xmin = 55.3875 
+            xmax = 55.58247919068656 
+            text = "" 
+        intervals [28]:
+            xmin = 55.58247919068656 
+            xmax = 55.99179320685907 
+            text = "igen" 
+        intervals [29]:
+            xmin = 55.99179320685907 
+            xmax = 57.87341584836851 
+            text = "" 
+        intervals [30]:
+            xmin = 57.87341584836851 
+            xmax = 58.099454931926466 
+            text = "" 
+        intervals [31]:
+            xmin = 58.099454931926466 
+            xmax = 58.810875 
+            text = "köszönöm" 
+        intervals [32]:
+            xmin = 58.810875 
+            xmax = 60.695737118470475 
+            text = "_ANONYMIZED_"
+        intervals [33]:
+            xmin = 60.695737118470475 
+            xmax = 63.58 
+            text = "" 
+        intervals [34]:
+            xmin = 63.58 
+            xmax = 64.51996135353204 
+            text = "(())" 
+        intervals [35]:
+            xmin = 64.51996135353204 
+            xmax = 65.4424451810253 
+            text = "" 
+        intervals [36]:
+            xmin = 65.4424451810253 
+            xmax = 66.83533466889593 
+            text = "_ANONYMIZED_"
+        intervals [37]:
+            xmin = 66.83533466889593 
+            xmax = 67.39 
+            text = "((látom))" 
+        intervals [38]:
+            xmin = 67.39 
+            xmax = 67.66 
+            text = "" 
+        intervals [39]:
+            xmin = 67.66 
+            xmax = 69.69 
+            text = "_ANONYMIZED_"
+        intervals [40]:
+            xmin = 69.69 
+            xmax = 78.11565801848518 
+            text = "" 
+        intervals [41]:
+            xmin = 78.11565801848518 
+            xmax = 84.49299970244557 
+            text = "_ANONYMIZED_"
+        intervals [42]:
+            xmin = 84.49299970244557 
+            xmax = 84.71903878600352 
+            text = "" 
+        intervals [43]:
+            xmin = 84.71903878600352 
+            xmax = 85.35 
+            text = "tehát vörös" 
+        intervals [44]:
+            xmin = 85.35 
+            xmax = 85.59875846255339 
+            text = "" 
+        intervals [45]:
+            xmin = 85.59875846255339 
+            xmax = 87.52314525500624 
+            text = "" 
+        intervals [46]:
+            xmin = 87.52314525500624 
+            xmax = 88.0135 
+            text = "((igen))" 
+        intervals [47]:
+            xmin = 88.0135 
+            xmax = 88.775125 
+            text = "" 
+        intervals [48]:
+            xmin = 88.775125 
+            xmax = 89.49029619840248 
+            text = "((igen))" 
+        intervals [49]:
+            xmin = 89.49029619840248 
+            xmax = 90.27358369649207 
+            text = "" 
+        intervals [50]:
+            xmin = 90.27358369649207 
+            xmax = 93.59085997681554 
+            text = "máris nézem a hozzátartozó jelszó, szintén ugyanez" 
+        intervals [51]:
+            xmin = 93.59085997681554 
+            xmax = 94.22 
+            text = "" 
+        intervals [52]:
+            xmin = 94.22 
+            xmax = 95.24256268817975 
+            text = "" 
+        intervals [53]:
+            xmin = 95.24256268817975 
+            xmax = 96 
+            text = "((igen))" 
+        intervals [54]:
+            xmin = 96 
+            xmax = 96.33 
+            text = "" 
+        intervals [55]:
+            xmin = 96.33 
+            xmax = 97.15473115179162 
+            text = "" 
+        intervals [56]:
+            xmin = 97.15473115179162 
+            xmax = 97.29524193346278 
+            text = "" 
+        intervals [57]:
+            xmin = 97.29524193346278 
+            xmax = 97.71066511405577 
+            text = "" 
+        intervals [58]:
+            xmin = 97.71066511405577 
+            xmax = 97.91226753993179 
+            text = "" 
+        intervals [59]:
+            xmin = 97.91226753993179 
+            xmax = 98.372625 
+            text = "" 
+        intervals [60]:
+            xmin = 98.372625 
+            xmax = 105.83 
+            text = "" 
+        intervals [61]:
+            xmin = 105.83 
+            xmax = 106.479944961987 
+            text = "értem" 
+        intervals [62]:
+            xmin = 106.479944961987 
+            xmax = 108.75569630980645 
+            text = "" 
+        intervals [63]:
+            xmin = 108.75569630980645 
+            xmax = 110.61288229363396 
+            text = "(())" 
+        intervals [64]:
+            xmin = 110.61288229363396 
+            xmax = 114.12034313935096 
+            text = "hogy ha számítógép közelben vannak, akkor hívják fel a technikai hibaügyeletet" 
+        intervals [65]:
+            xmin = 114.12034313935096 
+            xmax = 114.54187548436445 
+            text = "" 
+        intervals [66]:
+            xmin = 114.54187548436445 
+            xmax = 117.06496039002484 
+            text = "és ott fognak tudni a kollegák segíteni beállítani" 
+        intervals [67]:
+            xmin = 117.06496039002484 
+            xmax = 117.3 
+            text = "" 
+        intervals [68]:
+            xmin = 117.3 
+            xmax = 118.53298758207274 
+            text = "(())" 
+        intervals [69]:
+            xmin = 118.53298758207274 
+            xmax = 120.05416952277355 
+            text = "" 
+        intervals [70]:
+            xmin = 120.05416952277355 
+            xmax = 121.28822073571156 
+            text = "tizennégy negyvenötös" 
+        intervals [71]:
+            xmin = 121.28822073571156 
+            xmax = 121.53258731253098 
+            text = "" 
+        intervals [72]:
+            xmin = 121.53258731253098 
+            xmax = 124.28159860958714 
+            text = "" 
+        intervals [73]:
+            xmin = 124.28159860958714 
+            xmax = 126.08 
+            text = "((köszönöm, önnek is))" 
+        intervals [74]:
+            xmin = 126.08 
+            xmax = 126.29 
+            text = "" 
+        intervals [75]:
+            xmin = 126.29 
+            xmax = 127.71 
+            text = "" 
+        intervals [76]:
+            xmin = 127.71 
+            xmax = 128.19 
+            text = "" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "ugyfel" 
+        xmin = 0 
+        xmax = 128.19 
+        intervals: size = 76 
+        intervals [1]:
+            xmin = 0 
+            xmax = 2.8 
+            text = "un*" 
+        intervals [2]:
+            xmin = 2.8 
+            xmax = 5.23 
+            text = "_ANONYMIZED_"
+        intervals [3]:
+            xmin = 5.23 
+            xmax = 5.62 
+            text = "" 
+        intervals [4]:
+            xmin = 5.62 
+            xmax = 8.77 
+            text = "_ANONYMIZED_"
+        intervals [5]:
+            xmin = 8.77 
+            xmax = 10.15 
+            text = "" 
+        intervals [6]:
+            xmin = 10.15 
+            xmax = 11.764798042001322 
+            text = "és olyan problémám van" 
+        intervals [7]:
+            xmin = 11.764798042001322 
+            xmax = 12.19 
+            text = "" 
+        intervals [8]:
+            xmin = 12.19 
+            xmax = 13.756385643079492 
+            text = "hogy ((ö)) az édesapám" 
+        intervals [9]:
+            xmin = 13.756385643079492 
+            xmax = 14.2 
+            text = "" 
+        intervals [10]:
+            xmin = 14.2 
+            xmax = 18.93 
+            text = "egy cégnek a nevére ((ö)) kérte az internetszolgáltatást ide FÓTRA" 
+        intervals [11]:
+            xmin = 18.93 
+            xmax = 19.14 
+            text = "" 
+        intervals [12]:
+            xmin = 19.14 
+            xmax = 21.42 
+            text = "tehát nem saját névre, hanem a cégének a nevére" 
+        intervals [13]:
+            xmin = 21.42 
+            xmax = 22.13 
+            text = "" 
+        intervals [14]:
+            xmin = 22.13 
+            xmax = 29.79 
+            text = "és õ most elutazott egy évre japánba és most itt az édesanyámmal próbáljuk beállítani a számítógépen az internetcsatlakozást" 
+        intervals [15]:
+            xmin = 29.79 
+            xmax = 30.32 
+            text = "" 
+        intervals [16]:
+            xmin = 30.32 
+            xmax = 39.38 
+            text = "de sehol nem találunk ((ö)) jelszóra vonatkozó, ((ö)) hogy ezt hol keressem, vagy egyáltalán ön tud e nekem ebben segíteni, mert szeretnénk feltelepíteni ugye az internetet" 
+        intervals [17]:
+            xmin = 39.38 
+            xmax = 39.64 
+            text = "" 
+        intervals [18]:
+            xmin = 39.64 
+            xmax = 42.62 
+            text = "" 
+        intervals [19]:
+            xmin = 42.62 
+            xmax = 43.11635369495825 
+            text = "" 
+        intervals [20]:
+            xmin = 43.11635369495825 
+            xmax = 47.43 
+            text = "szerzõdésszámot tudok mondani pillanat, az a számlán rajta van?" 
+        intervals [21]:
+            xmin = 47.43 
+            xmax = 47.79351993889232 
+            text = "" 
+        intervals [22]:
+            xmin = 47.79351993889232 
+            xmax = 49.34513500953337 
+            text = "" 
+        intervals [23]:
+            xmin = 49.34513500953337 
+            xmax = 50.64 
+            text = "(()) mindjárt" 
+        intervals [24]:
+            xmin = 50.64 
+            xmax = 51.81 
+            text = "" 
+        intervals [25]:
+            xmin = 51.81 
+            xmax = 53.010875 
+            text = "(())" 
+        intervals [26]:
+            xmin = 53.010875 
+            xmax = 55.3875 
+            text = "szerzõdésszám mondom negyvenhárom" 
+        intervals [27]:
+            xmin = 55.3875 
+            xmax = 55.58247919068656 
+            text = "" 
+        intervals [28]:
+            xmin = 55.58247919068656 
+            xmax = 55.99179320685907 
+            text = "" 
+        intervals [29]:
+            xmin = 55.99179320685907 
+            xmax = 57.87341584836851 
+            text = "tizenöt hatvanötös" 
+        intervals [30]:
+            xmin = 57.87341584836851 
+            xmax = 58.099454931926466 
+            text = "" 
+        intervals [31]:
+            xmin = 58.099454931926466 
+            xmax = 58.810875 
+            text = "" 
+        intervals [32]:
+            xmin = 58.810875 
+            xmax = 60.695737118470475 
+            text = "_ANONYMIZED_"
+        intervals [33]:
+            xmin = 60.695737118470475 
+            xmax = 63.58 
+            text = "" 
+        intervals [34]:
+            xmin = 63.58 
+            xmax = 64.51996135353204 
+            text = "((néven van))" 
+        intervals [35]:
+            xmin = 64.51996135353204 
+            xmax = 65.4424451810253 
+            text = "" 
+        intervals [36]:
+            xmin = 65.4424451810253 
+            xmax = 66.83533466889593 
+            text = "_ANONYMIZED_"
+        intervals [37]:
+            xmin = 66.83533466889593 
+            xmax = 67.39 
+            text = "((így van))" 
+        intervals [38]:
+            xmin = 67.39 
+            xmax = 67.66 
+            text = "" 
+        intervals [39]:
+            xmin = 67.66 
+            xmax = 69.69 
+            text = "_ANONYMIZED_"
+        intervals [40]:
+            xmin = 69.69 
+            xmax = 78.11565801848518 
+            text = "" 
+        intervals [41]:
+            xmin = 78.11565801848518 
+            xmax = 84.49299970244557 
+            text = "_ANONYMIZED_"
+        intervals [42]:
+            xmin = 84.49299970244557 
+            xmax = 84.71903878600352 
+            text = "" 
+        intervals [43]:
+            xmin = 84.71903878600352 
+            xmax = 85.35 
+            text = "" 
+        intervals [44]:
+            xmin = 85.35 
+            xmax = 85.59875846255339 
+            text = "" 
+        intervals [45]:
+            xmin = 85.59875846255339 
+            xmax = 87.52314525500624 
+            text = "voros m (()) egybe" 
+        intervals [46]:
+            xmin = 87.52314525500624 
+            xmax = 88.0135 
+            text = "((ugye?))" 
+        intervals [47]:
+            xmin = 88.0135 
+            xmax = 88.775125 
+            text = "kisbetûvel" 
+        intervals [48]:
+            xmin = 88.775125 
+            xmax = 89.49029619840248 
+            text = "((igen))" 
+        intervals [49]:
+            xmin = 89.49029619840248 
+            xmax = 90.27358369649207 
+            text = "" 
+        intervals [50]:
+            xmin = 90.27358369649207 
+            xmax = 93.59085997681554 
+            text = "" 
+        intervals [51]:
+            xmin = 93.59085997681554 
+            xmax = 94.22 
+            text = "" 
+        intervals [52]:
+            xmin = 94.22 
+            xmax = 95.24256268817975 
+            text = "ugyanez a jelszó is?" 
+        intervals [53]:
+            xmin = 95.24256268817975 
+            xmax = 96 
+            text = "((jó))" 
+        intervals [54]:
+            xmin = 96 
+            xmax = 96.33 
+            text = "" 
+        intervals [55]:
+            xmin = 96.33 
+            xmax = 97.15473115179162 
+            text = "voros m" 
+        intervals [56]:
+            xmin = 97.15473115179162 
+            xmax = 97.29524193346278 
+            text = "" 
+        intervals [57]:
+            xmin = 97.29524193346278 
+            xmax = 97.71066511405577 
+            text = "jó" 
+        intervals [58]:
+            xmin = 97.71066511405577 
+            xmax = 97.91226753993179 
+            text = "" 
+        intervals [59]:
+            xmin = 97.91226753993179 
+            xmax = 98.372625 
+            text = "szuper" 
+        intervals [60]:
+            xmin = 98.372625 
+            xmax = 105.83 
+            text = "akkor így most már be fogom tudni állítani, mert erre vonatkozólag sehol nem találunk, anyuval már itt feltúrtunk minden szerzõdést, de nem találtunk erre vonatkozóan semmit" 
+        intervals [61]:
+            xmin = 105.83 
+            xmax = 106.479944961987 
+            text = "" 
+        intervals [62]:
+            xmin = 106.479944961987 
+            xmax = 108.75569630980645 
+            text = "és akkor az INVITEL azonosító nem kell ide" 
+        intervals [63]:
+            xmin = 108.75569630980645 
+            xmax = 110.61288229363396 
+            text = "(())" 
+        intervals [64]:
+            xmin = 110.61288229363396 
+            xmax = 114.12034313935096 
+            text = "" 
+        intervals [65]:
+            xmin = 114.12034313935096 
+            xmax = 114.54187548436445 
+            text = "" 
+        intervals [66]:
+            xmin = 114.54187548436445 
+            xmax = 117.06496039002484 
+            text = "" 
+        intervals [67]:
+            xmin = 117.06496039002484 
+            xmax = 117.3 
+            text = "" 
+        intervals [68]:
+            xmin = 117.3 
+            xmax = 118.53298758207274 
+            text = "((értem és ö))" 
+        intervals [69]:
+            xmin = 118.53298758207274 
+            xmax = 120.05416952277355 
+            text = "annak mi a telefonszáma?" 
+        intervals [70]:
+            xmin = 120.05416952277355 
+            xmax = 121.28822073571156 
+            text = "" 
+        intervals [71]:
+            xmin = 121.28822073571156 
+            xmax = 121.53258731253098 
+            text = "" 
+        intervals [72]:
+            xmin = 121.53258731253098 
+            xmax = 124.28159860958714 
+            text = "tizennégy negyvenötös, nagyon szépen köszönöm a segítségét" 
+        intervals [73]:
+            xmin = 124.28159860958714 
+            xmax = 126.08 
+            text = "((és kellemes húsvétot))" 
+        intervals [74]:
+            xmin = 126.08 
+            xmax = 126.29 
+            text = "" 
+        intervals [75]:
+            xmin = 126.29 
+            xmax = 127.71 
+            text = "köszönöm, viszonthallásra!" 
+        intervals [76]:
+            xmin = 127.71 
+            xmax = 128.19 
+            text = "" 
+

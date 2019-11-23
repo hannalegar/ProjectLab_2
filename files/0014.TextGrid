@@ -1,0 +1,135 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 101.36 
+tiers? <exists> 
+size = 3
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "erzelem" 
+        xmin = 0 
+        xmax = 101.36 
+        intervals: size = 9 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.9274407737079946 
+            text = "U" 
+        intervals [2]:
+            xmin = 1.9274407737079946 
+            xmax = 2.7382148630924976 
+            text = "E" 
+        intervals [3]:
+            xmin = 2.7382148630924976 
+            xmax = 5.485165882350442 
+            text = "U" 
+        intervals [4]:
+            xmin = 5.485165882350442 
+            xmax = 6.1507267019944365 
+            text = "E" 
+        intervals [5]:
+            xmin = 6.1507267019944365 
+            xmax = 7.07 
+            text = "U" 
+        intervals [6]:
+            xmin = 7.07 
+            xmax = 8.377330171348893 
+            text = "E" 
+        intervals [7]:
+            xmin = 8.377330171348893 
+            xmax = 9.64 
+            text = "U" 
+        intervals [8]:
+            xmin = 9.64 
+            xmax = 11.1 
+            text = "E" 
+        intervals [9]:
+            xmin = 11.1 
+            xmax = 101.36 
+            text = "U" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "diszpecser" 
+        xmin = 0 
+        xmax = 101.36 
+        intervals: size = 9 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.9274407737079946 
+            text = "dn*" 
+        intervals [2]:
+            xmin = 1.9274407737079946 
+            xmax = 2.7382148630924976 
+            text = "" 
+        intervals [3]:
+            xmin = 2.7382148630924976 
+            xmax = 5.485165882350442 
+            text = "" 
+        intervals [4]:
+            xmin = 5.485165882350442 
+            xmax = 6.1507267019944365 
+            text = "" 
+        intervals [5]:
+            xmin = 6.1507267019944365 
+            xmax = 7.07 
+            text = "" 
+        intervals [6]:
+            xmin = 7.07 
+            xmax = 8.377330171348893 
+            text = "" 
+        intervals [7]:
+            xmin = 8.377330171348893 
+            xmax = 9.64 
+            text = "" 
+        intervals [8]:
+            xmin = 9.64 
+            xmax = 11.1 
+            text = "" 
+        intervals [9]:
+            xmin = 11.1 
+            xmax = 101.36 
+            text = "" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "ugyfel" 
+        xmin = 0 
+        xmax = 101.36 
+        intervals: size = 9 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.9274407737079946 
+            text = "nu*" 
+        intervals [2]:
+            xmin = 1.9274407737079946 
+            xmax = 2.7382148630924976 
+            text = "haló!" 
+        intervals [3]:
+            xmin = 2.7382148630924976 
+            xmax = 5.485165882350442 
+            text = "" 
+        intervals [4]:
+            xmin = 5.485165882350442 
+            xmax = 6.1507267019944365 
+            text = "haló!" 
+        intervals [5]:
+            xmin = 6.1507267019944365 
+            xmax = 7.07 
+            text = "" 
+        intervals [6]:
+            xmin = 7.07 
+            xmax = 8.377330171348893 
+            text = "tessék megszólalni!" 
+        intervals [7]:
+            xmin = 8.377330171348893 
+            xmax = 9.64 
+            text = "" 
+        intervals [8]:
+            xmin = 9.64 
+            xmax = 11.1 
+            text = "nem, nem. annyi." 
+        intervals [9]:
+            xmin = 11.1 
+            xmax = 101.36 
+            text = "" 
+

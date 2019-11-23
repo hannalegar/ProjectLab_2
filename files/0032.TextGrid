@@ -1,0 +1,147 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 106.73 
+tiers? <exists> 
+size = 3
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "erzelem" 
+        xmin = 0 
+        xmax = 106.73 
+        intervals: size = 10 
+        intervals [1]:
+            xmin = 0 
+            xmax = 2.895529238644719 
+            text = "U" 
+        intervals [2]:
+            xmin = 2.895529238644719 
+            xmax = 3.3674723653013707 
+            text = "N" 
+        intervals [3]:
+            xmin = 3.3674723653013707 
+            xmax = 3.61 
+            text = "U" 
+        intervals [4]:
+            xmin = 3.61 
+            xmax = 4.0693365023804935 
+            text = "N" 
+        intervals [5]:
+            xmin = 4.0693365023804935 
+            xmax = 7.8811848330688345 
+            text = "_ANONYMIZED_"
+        intervals [6]:
+            xmin = 7.8811848330688345 
+            xmax = 8.33 
+            text = "U" 
+        intervals [7]:
+            xmin = 8.33 
+            xmax = 13.98805057340839 
+            text = "N" 
+        intervals [8]:
+            xmin = 13.98805057340839 
+            xmax = 14.970016110256694 
+            text = "N" 
+        intervals [9]:
+            xmin = 14.970016110256694 
+            xmax = 18.2 
+            text = "E" 
+        intervals [10]:
+            xmin = 18.2 
+            xmax = 106.73 
+            text = "U" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "diszpecser" 
+        xmin = 0 
+        xmax = 106.73 
+        intervals: size = 10 
+        intervals [1]:
+            xmin = 0 
+            xmax = 2.895529238644719 
+            text = "dn*" 
+        intervals [2]:
+            xmin = 2.895529238644719 
+            xmax = 3.3674723653013707 
+            text = "" 
+        intervals [3]:
+            xmin = 3.3674723653013707 
+            xmax = 3.61 
+            text = "" 
+        intervals [4]:
+            xmin = 3.61 
+            xmax = 4.0693365023804935 
+            text = "" 
+        intervals [5]:
+            xmin = 4.0693365023804935 
+            xmax = 7.8811848330688345 
+            text = "_ANONYMIZED_"
+        intervals [6]:
+            xmin = 7.8811848330688345 
+            xmax = 8.33 
+            text = "" 
+        intervals [7]:
+            xmin = 8.33 
+            xmax = 13.98805057340839 
+            text = "azt szeretném megkérdezni, hogy telefon illetve INTERNET akciónk érdekelné-e önt vagy családját?" 
+        intervals [8]:
+            xmin = 13.98805057340839 
+            xmax = 14.970016110256694 
+            text = "" 
+        intervals [9]:
+            xmin = 14.970016110256694 
+            xmax = 18.2 
+            text = "értem, köszönöm akkor a segítséget. viszonthallásra!" 
+        intervals [10]:
+            xmin = 18.2 
+            xmax = 106.73 
+            text = "" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "ugyfel" 
+        xmin = 0 
+        xmax = 106.73 
+        intervals: size = 10 
+        intervals [1]:
+            xmin = 0 
+            xmax = 2.895529238644719 
+            text = "nu*" 
+        intervals [2]:
+            xmin = 2.895529238644719 
+            xmax = 3.3674723653013707 
+            text = "halló!" 
+        intervals [3]:
+            xmin = 3.3674723653013707 
+            xmax = 3.61 
+            text = "" 
+        intervals [4]:
+            xmin = 3.61 
+            xmax = 4.0693365023804935 
+            text = "halló!" 
+        intervals [5]:
+            xmin = 4.0693365023804935 
+            xmax = 7.8811848330688345 
+            text = "_ANONYMIZED_"
+        intervals [6]:
+            xmin = 7.8811848330688345 
+            xmax = 8.33 
+            text = "" 
+        intervals [7]:
+            xmin = 8.33 
+            xmax = 13.98805057340839 
+            text = "" 
+        intervals [8]:
+            xmin = 13.98805057340839 
+            xmax = 14.970016110256694 
+            text = "nem. nem!" 
+        intervals [9]:
+            xmin = 14.970016110256694 
+            xmax = 18.2 
+            text = "" 
+        intervals [10]:
+            xmin = 18.2 
+            xmax = 106.73 
+            text = "" 
+
