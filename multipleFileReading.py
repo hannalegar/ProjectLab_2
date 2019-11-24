@@ -93,25 +93,31 @@ def split_senteces_into_words(text):
                                                filters='!"#$%&()*+,-./:;<=>?@[\\]^_`{|}~\t\n',
                                                lower=True,
                                                split=" ")        
+def encode(text, tokenizer):
+    return [tokenizer.word_index[i] for i in text]
+
+def decode(encoded_text, rwm):
+    print(' '.join(rwm[id] for id in encoded_text))
+
 char_toNum_switcher = {
-        "V" : 1,
-        "O" : 2,
-        "P" : 3,
-        "R" : 4,
-        "L" : 5,
-        "N" : 6,
-        "E" : 7,
-        "I" : 8
+        "V" : 0,
+        "O" : 1,
+        "P" : 2,
+        "R" : 3,
+        "L" : 4,
+        "N" : 5,
+        "E" : 6,
+        "I" : 7
 }
 num_toChar_switcher = {
-         1: "V",
-         2: "O",
-         3: "P",
-         4: "R",
-         5: "L",
-         6: "N",
-         7: "E",
-         8: "I"
+         0: "V",
+         1: "O",
+         2: "P",
+         3: "R",
+         4: "L",
+         5: "N",
+         6: "E",
+         7: "I"
 }
 
 # ------------------------------------- DOWNLOAD TEXTS ----------------------------------------------#
@@ -337,17 +343,18 @@ stopWords
 # ---- filter splitted sentences ................................
 filteredTexts = []
 
-for s in splittedTexts:
-    filteredTexts.append(splitted_sentence(i))
-
-filteredTexts[0]
-
 def splitted_sentence(sentence):
     splitted_s = [] 
     for w in s:
         if w not in stopWords:
             splitted_s.append(w)
     return splitted_s
+
+
+for s in splittedTexts:
+    filteredTexts.append(splitted_sentence(i))
+
+filteredTexts[0]
 
 
 # for i in range(0, 15):
@@ -435,6 +442,345 @@ display_closestwords_tsnescatterplot(model, 'hülye', 200)
 
 similarity = model.wmdistance(allFilteredTexts[0], allFilteredTexts[0])
 print("{:.4f}".format(similarity))
+
+# ----------------------------------------- TOKENIZE TEXT -------------------------------------------------#
+
+allFilteredTexts
+allTarget
+
+len(allFilteredTexts) == len(allTarget)
+
+t = Tokenizer()
+t.fit_on_texts(allFilteredTexts)
+
+
+#word map for decióodng a text
+reverse_word_map = dict(map(reversed, t.word_index.items()))
+
+# t.word_index["tegnap"]
+# t.word_index["este"]
+# 
+# asd = encode(allFilteredTexts[0], t)
+# asd
+# 
+# decode(asd, reverse_word_map)
+
+encoded_texts = []
+encoded_texts = [encode(i, t) for i in allFilteredTexts]
+
+for i in range(0, 10):
+    print(allFilteredTexts[i])
+    print(encoded_texts[i])
+    decode(encoded_texts[i], reverse_word_map)
+
+#pad sequences 
+max_textSize = len(max(encoded_texts, key=len)) 
+max_textSize
+
+
+X = sequence.pad_sequences(encoded_texts, maxlen = max_textSize)
+X
+
+# ------------------------------------ ONE HOT ENCODE TARGET ----------------------------------------------#
+
+numtarget = []
+numTarget = [char_toNum_switcher.get(i) for i in allTarget]
+numTarget
+
+# sorted_nums = sorted(list(set(numTarget)))
+# sorted_nums
+# 
+# for i in sorted_nums:
+#     print(num_toChar_switcher.get(i))
+
+encoder = LabelEncoder()
+encoder.fit(numTarget)
+
+# convert integers to dummy variables (i.e. one hot encoded)
+y = np_utils.to_categorical(numTarget)
+
+allTarget[0:15]
+numTarget[0:15]
+y[0:15]
+
+y[0]
+# ---------------------------------------- BUILD THE MODEL ------------------------------------------------#
+len(X) == len(y)
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+X_train
+X_test
+y_train
+y_test
+
+# Build the model 
+embedding_vector_length = 32 
+top_words = len(t.word_index) + 1
+
+model = Sequential() 
+model.add(Embedding(top_words, embedding_vector_length, input_length=max_textSize)) 
+model.add(LSTM(100)) 
+model.add(Dense(8, input_dim=8, activation='relu'))
+model.add(Dense(8, activation='softmax')) 
+model.compile(loss="categorical_crossentropy" ,optimizer='adam', metrics=['accuracy']) 
+print(model.summary()) 
+
+model.fit(X_train, y_train, validation_data=(X_test, y_test), nb_epoch=3, batch_size=64)
+
+scores = model.evaluate(X_test, y_test, verbose=0) 
+print("Accuracy: %.2f%%" % (scores[1]*100))
+
+
+# ---------------------------------------- TEST THE MODEL ------------------------------------------------#
+
+N = "ő fölvettem a telefont,és egy gépi hang azt közölte, hogy hiány van a számlámon, és ki fogják kapcsolni a telefonomat."
+P = "mondom először azt se tudtam hogy honna jön a hívás, aztán mikor ((szám))"
+sajat = "nem értem mi olyan nehéz ezen megcsinálni... semmire nem képesek?"
+
+def model_test(sentence):
+    print(sentence)
+    sentence.replace(",", '')
+    
+    splitted_sentence = split_senteces_into_words(sentence)
+    splitted_sentence
+    
+    filtered_sentence = []
+    for i in splitted_sentence:
+        if i not in stopWords:
+            filtered_sentence.append(i)
+    
+    filtered_sentence
+    
+    encode_filtered = encode(filtered_sentence, t)
+    encode_filtered
+    decode(encode_filtered, reverse_word_map)
+    
+    asd = [encode_filtered]
+    asd
+    padded_sentence = sequence.pad_sequences(asd, maxlen = max_textSize)
+    padded_sentence
+    
+    res = model.predict(array([padded_sentence][0]))
+    print("result:")
+    print(res[0].tolist())
+
+    maximum = np.argmax(res[0])
+    print("max")
+    print(maximum)
+
+    res_to_ints = [int(round(x)) for x in res[0]]
+    res_to_ints
+    # print("res_to_ints:")
+    # print(res_to_ints)
+
+    max_value = max(res.tolist())
+    max_index = res.tolist().index(max_value)
+    # print("max_value: ")
+    # print(max_value)
+    # print("max_index:")
+    # print(max_index)
+
+    i = [idx for idx, v in enumerate(res_to_ints) if v]
+    
+    # print("i" + str(i))
+    # print(num_toChar_switcher.get(i[0]))
+
+
+model_test(N)
+
+y[13]
+allTarget[13]
+allFilteredTexts[13]
+
+texts[14]
+target[14]
+
+model_test(texts[14])
+
+model_test(P)
+model_test(sajat)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###########################################################################
+###########################################################################
+###########################################################################
+###########################################################################
+###########################################################################
+
+t2 = Tokenizer()
+t2.fit_on_texts(splittedTexts)
+
+
+
+#word map for decióodng a text
+reverse_word_map2 = dict(map(reversed, t2.word_index.items()))
+
+t2.word_index['én']
+t2.word_index["tegnap"]
+t2.word_index["este"]
+
+asd = encode(splittedTexts[0], t2)
+asd
+
+decode(asd, reverse_word_map2)
+
+encoded_texts2 = []
+encoded_texts2 = [encode(i, t2) for i in splittedTexts]
+
+for i in range(0, 10):
+    print(splittedTexts[i])
+    print(encoded_texts2[i])
+    decode(splittedTexts[i], reverse_word_map2)
+
+
+#pad sequences 
+max_textSize = len(max(encoded_texts2, key=len)) 
+max_textSize
+
+
+X2 = sequence.pad_sequences(encoded_texts2, maxlen = max_textSize)
+X2
+
+numTarget = [char_toNum_switcher.get(i) for i in target]
+numTarget
+
+encoder = LabelEncoder()
+encoder.fit(numTarget)
+transfomerd_Target = encoder.transform(numTarget)
+
+# convert integers to dummy variables (i.e. one hot encoded)
+y2 = np_utils.to_categorical(transfomerd_Target)
+y2
+
+len(X2) == len(y2)
+
+X_train, X_test, y_train, y_test = train_test_split(X2, y2, test_size=0.2)
+
+X_train
+X_test
+y_train
+y_test
+
+# Build the model 
+embedding_vector_length = 32 
+top_words = len(t2.word_index) + 1
+
+model = Sequential() 
+model.add(Embedding(top_words, embedding_vector_length, input_length=max_textSize)) 
+model.add(LSTM(100)) 
+model.add(Dense(8, input_dim=8, activation='relu'))
+model.add(Dense(8, activation='softmax')) 
+model.compile(loss="categorical_crossentropy" ,optimizer='adam', metrics=['accuracy']) 
+print(model.summary()) 
+
+model.fit(X_train, y_train, validation_data=(X_test, y_test), nb_epoch=3, batch_size=64)
+
+scores = model.evaluate(X_test, y_test, verbose=0) 
+print("Accuracy: %.2f%%" % (scores[1]*100))
+
+
+def model_test2(sentence):
+    sentence.replace(",", '')
+    
+    splitted_sentence = split_senteces_into_words(sentence)
+    splitted_sentence
+    
+    encode_filtered = encode(splitted_sentence, t2)
+    encode_filtered
+    decode(encode_filtered, reverse_word_map)
+    
+    asd = [encode_filtered]
+    asd
+    padded_sentence = sequence.pad_sequences(asd, maxlen = max_textSize)
+    padded_sentence
+    
+    res = model.predict(array([padded_sentence][0]))
+    res_to_ints = [int(round(x)) for x in res[0]]
+    res_to_ints
+    
+    i = [idx+1 for idx, v in enumerate(res_to_ints) if v]
+    
+    print(res)
+    print(i)
+    print(num_toChar_switcher.get(i[0]))
+
+N = "ő fölvettem a telefont,és egy gépi hang azt közölte, hogy hiány van a számlámon, és ki fogják kapcsolni a telefonomat."
+P = "mondom először azt se tudtam hogy honna jön a hívás, aztán mikor ((szám))"
+sajat = "nem értem mi olyan nehéz ezen megcsinálni... semmire nem képesek?"
+
+
+model_test2(N)
+model_test2(P)
+model_test2(sajat)
+
+
+texts[14]
+target[14]
+
+model_test2(texts[14])
+
+
+
+
+
+
+
+# 
+# tmp_padded = sequence.pad_sequences([one_hot(N, vocab_size)], maxlen=max_textSize) 
+# array([tmp_padded][0])
+# 
+# asd = model.predict(array([tmp_padded][0]))
+# blabla = [int(round(x)) for x in asd[0]]
+# blabla
+# 
+# P = "mondom először azt se tudtam hogy honna jön a hívás, aztán mikor ((szám))"
+# 
+# tmp_padded2 = sequence.pad_sequences([one_hot(P, vocab_size)], maxlen=max_textSize)
+# 
+# array([tmp_padded2][0])
+# 
+# asd2 = model.predict(array([tmp_padded2][0]))
+# blabla2 = [int(round(x)) for x in asd2[0]]
+# blabla2
+
+
+
+
+
+
 
 
 
