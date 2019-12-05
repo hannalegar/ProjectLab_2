@@ -6,6 +6,7 @@ import ftplib
 import io
 import keras
 import nltk
+import gensim.downloader as api
 from os import listdir
 from os.path import isfile, join
 from numpy import array
@@ -23,7 +24,6 @@ from keras.preprocessing.text import Tokenizer
 from nltk.corpus import stopwords
 from gensim.test.utils import datapath
 from gensim.models import KeyedVectors
-import gensim.downloader as api
 from gensim.models import Word2Vec
 # ----------------------------------------- METHODS ------------------------------------------------#
 def intervalNames(path):
@@ -148,8 +148,10 @@ for d in ftp.nlst():
                 r.close()
 
 # ---------------------------------- MERGE TEXT INTO DATAFRAME  -------------------------------------#
+path = "C:/Users/z003w5tm/Documents/BME/code/ProjectLab_2-master/files/"
 
-onlyfiles = [f for f in listdir("files/") if isfile(join("files/", f))]
+onlyfiles = [f for f in listdir(path) if isfile(join(path, f))]
+onlyfiles
 
 df = pd.DataFrame()
 
@@ -172,10 +174,12 @@ for i in onlyfiles:
     print(i)
     if i in vmibaj:
         continue
-    l, names = beolvas("files/" + i)
+    l, names = beolvas(path + i)
     temp_df = pd.DataFrame()
     temp_df = tablazatba(temp_df, names, l, i)
     df = pd.concat([df, temp_df]).reset_index(drop = True)
+
+df
 
 df.replace(np.NaN, "", inplace=True)
 
@@ -188,7 +192,7 @@ df.drop(drop_indexes, inplace=True)
 drop_indexes = df[df['erzelem'] == 'erzelem'].index
 df.drop(drop_indexes, inplace=True)
 
-#df
+df
 
 df2 = df
 
@@ -336,9 +340,18 @@ for i in texts:
 splittedTexts
 splittedTexts[0]
 
+f = open("C:/Users/z003w5tm/Documents/BME/code/ProjectLab_2-master/stopWords.txt", "r", encoding="utf-8")
+lines = f.readlines()
+lines = [i.replace("\n", "") for i in lines]
+lines
+
+f.close()
+
 # set stopWords
 stopWords = set(stopwords.words("Hungarian"))
-stopWords 
+stopWords = lines
+stopWords
+
 
 # ---- filter splitted sentences ................................
 filteredTexts = []
@@ -349,7 +362,6 @@ def splitted_sentence(sentence):
         if w not in stopWords:
             splitted_s.append(w)
     return splitted_s
-
 
 for s in splittedTexts:
     filteredTexts.append(splitted_sentence(i))
@@ -451,8 +463,7 @@ allTarget
 len(allFilteredTexts) == len(allTarget)
 
 t = Tokenizer()
-t.fit_on_texts(allFilteredTexts)
-
+t.fit_on_texts(texts)
 
 #word map for decióodng a text
 reverse_word_map = dict(map(reversed, t.word_index.items()))
@@ -472,11 +483,126 @@ for i in range(0, 10):
     print(allFilteredTexts[i])
     print(encoded_texts[i])
     decode(encoded_texts[i], reverse_word_map)
+# -------------------------------------------- VISUALIZE -------------------------------------------------#
+
+import seaborn as sns
+sns.set(style="darkgrid")
+
+labels = pd.DataFrame(allTarget,  columns =['Sense']) 
+labels
+
+ax = sns.countplot(x="Sense", data=labels)
+
+withoutN = [i for i in allTarget if i != "N"]
+withoutN
+
+labels = pd.DataFrame(withoutN, columns =['Sense']) 
+
+ax = sns.countplot(x="Sense", data=labels)
+
+import matplotlib.pyplot as plt
+
+names = ['Client', 'Dispatcher']
+values = [len(ugyfelList), len(diszpecserList)]
+
+plt.bar(names, values)
+
+
+fig, ax = plt.subplots()
+
+bar_x = [1,2,3]
+values = [117147, 63698, 53449]
+names = ['All', 'Selected', 'Unnecessary']
+bar_label = [117147, 63698, 53449]
+
+def autolabel(rects):
+    for idx,rect in enumerate(bar_plot):
+        height = rect.get_height()
+        ax.text(rect.get_x() + rect.get_width()/2., 1.05*height,
+                bar_label[idx],
+                ha='center', va='bottom', rotation=0)
+
+
+bar_plot = plt.bar(bar_x, values, tick_label=names)
+autolabel(bar_plot)
+plt.ylim(0, 120000)
+plt.show()
+
+
+
+
+# --------------------------------------- REFINE THE DATASET ----------------------------------------------#
+
+atLeastFive_indexes = []
+atLeastFive_indexes = [i for i in range(len(allFilteredTexts)) if len(allFilteredTexts[i]) > 4]
+
+min5_texts = []
+min5_target = []
+
+for i in atLeastFive_indexes:
+    min5_target.append(allTarget[i])
+    min5_texts.append(allFilteredTexts[i])
+
+min5_target
+min5_texts
+
+# count non N targets
+non_NTargets = []
+non_NTargets = sum(map(lambda x : x != "N", min5_target))
+non_NTargets
+
+# select all N target indexes
+allN_X = []
+allN_X = [i for i in range(len(min5_texts)) if min5_target[i] == "N"]
+allN_X
+len(allN_X) == len(min5_target) - non_NTargets
+
+# select random indexes from all index
+import random
+sampling_indexes = random.choices(allN_X, k=non_NTargets*2)
+sampling_indexes
+
+# select non N indexes from all index
+non_N_Indexes = [i for i in range(len(min5_target)) if min5_target[i] != "N"]
+non_N_Indexes
+
+#merge indexes
+indexes = sampling_indexes + non_N_Indexes
+indexes
+
+len(non_N_Indexes) + len(sampling_indexes) == len(indexes)
+
+# select elements 
+selectedTexts = [min5_texts[i] for i in indexes]
+selectedTexts
+
+selectedTargets = [min5_target[i] for i in indexes]
+selectedTargets
+
+for i in non_N_Indexes:
+    selectedTexts.append(min5_texts[i])
+    selectedTargets.append(min5_target[i])
+
+len(selectedTargets) == (len(non_N_Indexes) *2) + len(sampling_indexes)
+
+len(sampling_indexes)
+selectedTexts[1737]
+selectedTargets[1737]
+
+selectedTexts[1738]
+selectedTargets[1738]
+
+
+# ----------------------------------------- ENCODE TEXTS --------------------------------------------------#
+
+# encode seleted texts
+encoded_texts = []
+encoded_texts = [encode(i, t) for i in selectedTexts]
+
 
 #pad sequences 
 max_textSize = len(max(encoded_texts, key=len)) 
 max_textSize
-
 
 X = sequence.pad_sequences(encoded_texts, maxlen = max_textSize)
 X
@@ -484,7 +610,7 @@ X
 # ------------------------------------ ONE HOT ENCODE TARGET ----------------------------------------------#
 
 numtarget = []
-numTarget = [char_toNum_switcher.get(i) for i in allTarget]
+numTarget = [char_toNum_switcher.get(i) for i in selectedTargets]
 numTarget
 
 # sorted_nums = sorted(list(set(numTarget)))
@@ -495,24 +621,36 @@ numTarget
 
 encoder = LabelEncoder()
 encoder.fit(numTarget)
-
 # convert integers to dummy variables (i.e. one hot encoded)
 y = np_utils.to_categorical(numTarget)
 
-allTarget[0:15]
-numTarget[0:15]
-y[0:15]
-
 y[0]
+y[1778]
+
 # ---------------------------------------- BUILD THE MODEL ------------------------------------------------#
+
 len(X) == len(y)
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
-X_train
-X_test
-y_train
-y_test
+# X_train
+# X_test
+# y_train
+# y_test
+
+
+for i in range(8):
+    print("The count of target " + num_toChar_switcher.get(i) + " is: " + str(sum(map(lambda x: x == num_toChar_switcher.get(i), selectedTargets))))
+
+
+
+labels = pd.DataFrame(selectedTargets,  columns =['Sense']) 
+labels
+ax = sns.countplot(x="Sense", data=labels)
+
+#           V  O   P  R  L   N  E  I
+weights = [12, 14, 4, 0, 10, 2, 8, 6]
+
 
 # Build the model 
 embedding_vector_length = 32 
@@ -526,415 +664,312 @@ model.add(Dense(8, activation='softmax'))
 model.compile(loss="categorical_crossentropy" ,optimizer='adam', metrics=['accuracy']) 
 print(model.summary()) 
 
-model.fit(X_train, y_train, validation_data=(X_test, y_test), nb_epoch=3, batch_size=64)
+model.fit(X_train, y_train, validation_data=(X_test, y_test), nb_epoch=7, batch_size=64, class_weight=weights)
 
 scores = model.evaluate(X_test, y_test, verbose=0) 
 print("Accuracy: %.2f%%" % (scores[1]*100))
 
-
 # ---------------------------------------- TEST THE MODEL ------------------------------------------------#
-
-N = "ő fölvettem a telefont,és egy gépi hang azt közölte, hogy hiány van a számlámon, és ki fogják kapcsolni a telefonomat."
-P = "mondom először azt se tudtam hogy honna jön a hívás, aztán mikor ((szám))"
-sajat = "nem értem mi olyan nehéz ezen megcsinálni... semmire nem képesek?"
-
 def model_test(sentence):
-    print(sentence)
+    #print(sentence)
     sentence.replace(",", '')
     
     splitted_sentence = split_senteces_into_words(sentence)
-    splitted_sentence
+    #splitted_sentence
     
     filtered_sentence = []
     for i in splitted_sentence:
         if i not in stopWords:
             filtered_sentence.append(i)
     
-    filtered_sentence
+    #filtered_sentence
     
     encode_filtered = encode(filtered_sentence, t)
-    encode_filtered
-    decode(encode_filtered, reverse_word_map)
+    #encode_filtered
+    #decode(encode_filtered, reverse_word_map)
     
     asd = [encode_filtered]
-    asd
+    #asd
     padded_sentence = sequence.pad_sequences(asd, maxlen = max_textSize)
-    padded_sentence
+    #padded_sentence
     
     res = model.predict(array([padded_sentence][0]))
-    print("result:")
-    print(res[0].tolist())
-
-    maximum = np.argmax(res[0])
-    print("max")
-    print(maximum)
-
-    res_to_ints = [int(round(x)) for x in res[0]]
-    res_to_ints
-    # print("res_to_ints:")
-    # print(res_to_ints)
-
-    max_value = max(res.tolist())
-    max_index = res.tolist().index(max_value)
-    # print("max_value: ")
-    # print(max_value)
-    # print("max_index:")
-    # print(max_index)
-
-    i = [idx for idx, v in enumerate(res_to_ints) if v]
     
-    # print("i" + str(i))
-    # print(num_toChar_switcher.get(i[0]))
+    #print(res[0])
+    for i in range(len(res[0])):
+        erzelem = num_toChar_switcher.get(i)
+        szazalek = round((res[0][i] * 100), 2)
+        print(erzelem + ": " + str(szazalek) + "%")
 
+find = []
+for i in range(8):
+    find.append(next(x for x, val in enumerate(target) if val == num_toChar_switcher.get(i)))
 
-model_test(N)
+find
 
-y[13]
-allTarget[13]
-allFilteredTexts[13]
-
-texts[14]
-target[14]
-
-model_test(texts[14])
-
-model_test(P)
-model_test(sajat)
-
-
-
-
-
-
+for i in find:
+    print("Eredeti szöveg:")
+    print(texts[i])
+    print("Eredeti érzelem:")
+    print(target[i] + "\n\nKiértlkelés:")
+    model_test(texts[i])
+    print("\n")
+    print("--------------------------------------------------")
 
 
 
+# confusion matrix 
+
+y_pred = []
+y_pred = model.predict(X_test)
+y_pred[0]
+
+
+predicted = []
+for i in range(len(y_pred)):
+    list_y_pred = y_pred[i].tolist()
+    predicted.append(num_toChar_switcher.get(list_y_pred.index(max(list_y_pred))))
+
+predicted
+
+test = []
+for i in range(len(y_test)):
+    list_test = y_test[i].tolist()
+    test.append(num_toChar_switcher.get(list_test.index(max(list_test))))
+
+eredmeny = []
+
+for i in range(len(test)):
+    e = 'Test: ' + test[i] + " - Predicted: " + predicted[i]
+    eredmeny.append(e)
+
+f = open("eredmenyek.txt", "w") 
+ 
+for i in eredmeny:
+    f.write(i + '\n')
+ 
+f.close() 
+
+
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(test, predicted)
+cm
+
+labels = ["V", "O", "P", "R", "L", "N", "E", "I"]
+
+fig = plt.figure()
+ax = fig.add_subplot(111)
+cax = ax.matshow(cm)
+
+plt.title('Confusion matrix of the classifier')
+fig.colorbar(cax)
+ax.set_xticklabels([''] + labels)
+ax.set_yticklabels([''] + labels)
+
+plt.xlabel('Predicted')
+plt.ylabel('True')
+plt.show()
+
+s = ""
+for i in range(8):
+    s += num_toChar_switcher.get(i) + "  "
+
+print(s)
 
 
 
+ax= plt.subplot()
+sns.heatmap(cm, annot=True, ax = ax); #annot=True to annotate cells
+
+# labels, title and ticks
+ax.set_xlabel('Predicted labels')
+ax.set_ylabel('True labels')
+ax.set_title('Confusion Matrix') 
+ax.xaxis.set_ticklabels(labels)
+ax.yaxis.set_ticklabels(labels)
+
+cm[0]
+
+pd.DataFrame(cm, index = [i for i in "VOPRLNEI"],
+                  columns = [i for i in "VOPRLNEI"])
+plt.figure(figsize = (10,7))
+sn.heatmap(df_cm, annot=True)
+
+######################################################################################################################################################
+######################################################################################################################################################
+
+# költségfüggvény szenzitív a ritka osztályra
+# ??
+
+######################################################################################################################################################
+######################################################################################################################################################
+
+for i in range(8):
+    print("The count of " + num_toChar_switcher.get(i) + " is: " + str(sum(map(lambda x: x == num_toChar_switcher.get(i), target))))
+
+# The count of V is: 289
+# The count of O is: 22
+# The count of P is: 804
+# The count of R is: 1
+# The count of L is: 137
+# The count of N is: 69632
+# The count of E is: 1087
+
+# O, R, L, és V össze vonva,  ----> M, mnt merged : 449
+
+atLeastFive_indexes = [i for i in range(len(allFilteredTexts)) if len(allFilteredTexts[i]) > 4]
+
+for i in range(8):
+    print("The count of " + num_toChar_switcher.get(i) + " is: " + str(sum(map(lambda x: x == num_toChar_switcher.get(i), allTarget))))
+
+#from selected:
+# The count of V is: 216
+# The count of O is: 22
+# The count of P is: 784
+# The count of R is: 1
+# The count of L is: 129
+# The count of N is: 57302
+# The count of E is: 961
+# The count of I is: 781
+
+# O, R, L, és V össze vonva,  ----> M, mnt merged : 368
+# P : 784
+# E : 961
+# N : 1000
+
+min5_texts = []
+min5_target = []
+
+for i in atLeastFive_indexes:
+    min5_target.append(allTarget[i])
+    min5_texts.append(allFilteredTexts[i])
+
+min5_target
+min5_texts
+
+# count non N targets
+non_NTargets = []
+non_NTargets = sum(map(lambda x : x != "N", min5_target))
+non_NTargets
+
+# select all N target indexes
+allN_X = []
+allN_X = [i for i in range(len(min5_texts)) if min5_target[i] == "N"]
+allN_X
+len(allN_X) == len(min5_target) - non_NTargets
+
+# select random indexes from all index
+import random
+sampling_indexes = random.choices(allN_X, k=non_NTargets*2)
+sampling_indexes
+
+# select non N indexes from all index
+non_N_Indexes = []
+non_N_Indexes = [i for i in range(len(min5_target)) if min5_target[i] not in "N"]
+non_N_Indexes
+
+#merge indexes
+indexes = sampling_indexes + non_N_Indexes
+indexes
+
+len(non_N_Indexes) + len(sampling_indexes) == len(indexes)
+
+# select elements 
+selectedTexts = [min5_texts[i] for i in indexes]
+selectedTexts
+
+selectedTargets = [min5_target[i] for i in indexes]
+selectedTargets
+
+for i in non_N_Indexes:
+    selectedTexts.append(min5_texts[i])
+    selectedTargets.append(min5_target[i])
+
+len(selectedTargets) == (len(non_N_Indexes) *2) + len(sampling_indexes)
+
+len(sampling_indexes)
+selectedTexts[3475]
+selectedTargets[3475]
+
+selectedTexts[3476]
+selectedTargets[3476]
 
 
+# O, R, L, és V to M
+for i in range(len(selectedTargets)):
+    if selectedTargets[i] in "OVRL":
+        selectedTargets[i] = "M"
 
+selectedTargets[1778:]
 
+# ----------------------------------------- NEW SWITCHERS --------------------------------------------------#
 
+char_toNum_switcher_2 = {
+        "P" : 0,
+        "N" : 1,
+        "E" : 2,
+        "I" : 3,
+        "M" : 4
+}
 
+num_toChar_switcher_2 = {
+         0: "P",
+         1: "N",
+         2: "E",
+         3: "I",
+         4: "M"
+}
 
+# ----------------------------------------- ENCODE TEXTS --------------------------------------------------#
 
+for i in range(5):
+    print("The count of " + num_toChar_switcher_2.get(i) + " is: " + str(sum(map(lambda x: x == num_toChar_switcher_2.get(i), selectedTargets))))
 
+#          P  N  E  I  M
+weights = [5, 1, 9, 7, 15]
 
-
-
-
-
-
-
-
-
-
-
-
-
-###########################################################################
-###########################################################################
-###########################################################################
-###########################################################################
-###########################################################################
-
-t2 = Tokenizer()
-t2.fit_on_texts(splittedTexts)
-
-
-
-#word map for decióodng a text
-reverse_word_map2 = dict(map(reversed, t2.word_index.items()))
-
-t2.word_index['én']
-t2.word_index["tegnap"]
-t2.word_index["este"]
-
-asd = encode(splittedTexts[0], t2)
-asd
-
-decode(asd, reverse_word_map2)
-
-encoded_texts2 = []
-encoded_texts2 = [encode(i, t2) for i in splittedTexts]
-
-for i in range(0, 10):
-    print(splittedTexts[i])
-    print(encoded_texts2[i])
-    decode(splittedTexts[i], reverse_word_map2)
+# encode seleted texts
+encoded_texts = []
+encoded_texts = [encode(i, t) for i in selectedTexts]
 
 
 #pad sequences 
-max_textSize = len(max(encoded_texts2, key=len)) 
+max_textSize = len(max(encoded_texts, key=len)) 
 max_textSize
 
+X = sequence.pad_sequences(encoded_texts, maxlen = max_textSize)
+X
 
-X2 = sequence.pad_sequences(encoded_texts2, maxlen = max_textSize)
-X2
+# ------------------------------------ ONE HOT ENCODE TARGET ----------------------------------------------#
 
-numTarget = [char_toNum_switcher.get(i) for i in target]
+numtarget = []
+numTarget = [char_toNum_switcher_2.get(i) for i in selectedTargets]
 numTarget
+
+# sorted_nums = sorted(list(set(numTarget)))
+# sorted_nums
+# 
+# for i in sorted_nums:
+#     print(num_toChar_switcher.get(i))
 
 encoder = LabelEncoder()
 encoder.fit(numTarget)
-transfomerd_Target = encoder.transform(numTarget)
-
 # convert integers to dummy variables (i.e. one hot encoded)
-y2 = np_utils.to_categorical(transfomerd_Target)
-y2
+y = np_utils.to_categorical(numTarget)
 
-len(X2) == len(y2)
 
-X_train, X_test, y_train, y_test = train_test_split(X2, y2, test_size=0.2)
+len(selectedTargets)
+selectedTargets[6945:6955]
+numTarget[6945:6955]
+y[6945:6955]
 
-X_train
-X_test
-y_train
-y_test
+y[0]
 
-# Build the model 
-embedding_vector_length = 32 
-top_words = len(t2.word_index) + 1
+# ---------------------------------------- BUILD THE MODEL ------------------------------------------------#
 
-model = Sequential() 
-model.add(Embedding(top_words, embedding_vector_length, input_length=max_textSize)) 
-model.add(LSTM(100)) 
-model.add(Dense(8, input_dim=8, activation='relu'))
-model.add(Dense(8, activation='softmax')) 
-model.compile(loss="categorical_crossentropy" ,optimizer='adam', metrics=['accuracy']) 
-print(model.summary()) 
+len(X) == len(y)
 
-model.fit(X_train, y_train, validation_data=(X_test, y_test), nb_epoch=3, batch_size=64)
-
-scores = model.evaluate(X_test, y_test, verbose=0) 
-print("Accuracy: %.2f%%" % (scores[1]*100))
-
-
-def model_test2(sentence):
-    sentence.replace(",", '')
-    
-    splitted_sentence = split_senteces_into_words(sentence)
-    splitted_sentence
-    
-    encode_filtered = encode(splitted_sentence, t2)
-    encode_filtered
-    decode(encode_filtered, reverse_word_map)
-    
-    asd = [encode_filtered]
-    asd
-    padded_sentence = sequence.pad_sequences(asd, maxlen = max_textSize)
-    padded_sentence
-    
-    res = model.predict(array([padded_sentence][0]))
-    res_to_ints = [int(round(x)) for x in res[0]]
-    res_to_ints
-    
-    i = [idx+1 for idx, v in enumerate(res_to_ints) if v]
-    
-    print(res)
-    print(i)
-    print(num_toChar_switcher.get(i[0]))
-
-N = "ő fölvettem a telefont,és egy gépi hang azt közölte, hogy hiány van a számlámon, és ki fogják kapcsolni a telefonomat."
-P = "mondom először azt se tudtam hogy honna jön a hívás, aztán mikor ((szám))"
-sajat = "nem értem mi olyan nehéz ezen megcsinálni... semmire nem képesek?"
-
-
-model_test2(N)
-model_test2(P)
-model_test2(sajat)
-
-
-texts[14]
-target[14]
-
-model_test2(texts[14])
-
-
-
-
-
-
-
-# 
-# tmp_padded = sequence.pad_sequences([one_hot(N, vocab_size)], maxlen=max_textSize) 
-# array([tmp_padded][0])
-# 
-# asd = model.predict(array([tmp_padded][0]))
-# blabla = [int(round(x)) for x in asd[0]]
-# blabla
-# 
-# P = "mondom először azt se tudtam hogy honna jön a hívás, aztán mikor ((szám))"
-# 
-# tmp_padded2 = sequence.pad_sequences([one_hot(P, vocab_size)], maxlen=max_textSize)
-# 
-# array([tmp_padded2][0])
-# 
-# asd2 = model.predict(array([tmp_padded2][0]))
-# blabla2 = [int(round(x)) for x in asd2[0]]
-# blabla2
-
-
-
-
-
-
-
-
-
-
-
-
-
-# ------------------------------------------- KÁOSZ ---------------------------------------------------#
-
-#---- vocab ---#
-processed_inputs = []
-
-for w in eeegybenMind:
-    w2 = w.split(" ")
-    if len(w2) > 1:
-        for www in w2:
-            processed_inputs.append(www)
-    else:
-        processed_inputs.append(w)
-
-processed_inputs
-
-words = sorted(list(set(processed_inputs)))
-words
-words_to_num = dict((w, i) for i, w in enumerate(words))
-
-input_len = len(processed_inputs)
-vocab_len = len(words)
-print ("Total number of characters:", input_len)
-print ("Total vocab:", vocab_len)
-
-#vocab---
-
-# integer encode the documents
-vocab_size = len(words)
-encoded_ugyfelList = [one_hot(d, vocab_size) for d in ugyfelList]
-encoded_diszpecserList = [one_hot(d, vocab_size) for d in diszpecserList]
-
-encoded_all = []
-
-for w in eeegybenMind:
-    #for d in w.split():
-    #    print(d)
-    encoded_all.append([one_hot(d, vocab_size) for d in w.split()])
-
-encoded_all = [one_hot(d, vocab_size) for d in eeegybenMind]
-encoded_all[0]
-eeegybenMind[0]
-
-encoded_ugyfelList[0]
-print(encoded_ugyfelList)
-print(encoded_diszpecserList)
-
-#find max length
-max_ugyfel = len(max(ugyfelList, key=len)) 
-max_diszpecser = len(max(diszpecserList, key=len))
-
-# set text size
-max_textSize = max_ugyfel if max_ugyfel > max_diszpecser else max_diszpecser
-
-ugyfel_X_train = sequence.pad_sequences(encoded_ugyfelList, maxlen = max_textSize)
-ugyfel_X_train
-
-diszpecser_X_train = sequence.pad_sequences(encoded_diszpecserList, maxlen = max_textSize)
-diszpecser_X_train
-
-t = Tokenizer()
-t.fit_on_texts(processed_inputs)
-t.word_index
-
-t.word_index["én"]
-t.word_index["tegnap"]
-t.word_index["este"]
-
-word_to_id = t.word_index
-word_to_id = {k:(v+3) for k,v in word_to_id.items()}
-word_to_id["<PAD>"] = 0
-word_to_id["<START>"] = 1
-word_to_id["<UNK>"] = 2
-
-
-id_to_word = {value:key for key,value in word_to_id.items()}
-print(' '.join(id_to_word[id] for id in encoded_all[0]))
-
-
-# print(t.word_counts)
-# print(t.document_count)
-# print(t.word_index)
-# print(t.word_docs)
-
-# ----------------------------------------- ENCODING - TARGET ----------------------------------------#
-ugyfelTargetList = ugyfel_df['erzelem'].tolist()
-
-# ugyfelTargetList
-# distinct_ugyfel = list(set(ugyfelTargetList))
-# distinct_ugyfel
-
-diszpecserTargetList = diszpecser_df['erzelem'].tolist() 
-diszpecserTargetList
-
-distinct_diszpecser = list(set(diszpecserTargetList))
-distinct_diszpecser
-
-toDistinct = ['N\t\t\t', 'E ', 'N ', 'NN', ' N', 'N\t', 'N0']
-expected = ['N', 'E', 'N', 'N', 'N', 'N', 'N']
-
-for i in range(0, len(toDistinct)):
-    diszpecserTargetList = replace_element(diszpecserTargetList, toDistinct[i], expected[i])
-    ugyfelTargetList = replace_element(ugyfelTargetList, toDistinct[i], expected[i])
-
-# distinct_ugyfel = list(set(ugyfelTargetList))
-# distinct_ugyfel
-
-# distinct_diszpecser = list(set(diszpecserTargetList))
-# distinct_diszpecser
-
-# print(char_toNum_switcher.get("N"))
-# print(num_toChar_switcher.get(6))
-
-encoded_ugyfelTarget = np.asarray([char_toNum_switcher.get(i) for i in ugyfelTargetList])
-# encoded_ugyfelTarget
-
-encoded_diszpecserTarget = np.asarray([char_toNum_switcher.get(i) for i in diszpecserTargetList])
-# encoded_diszpecserTarget
-#---------------------------------------------- CONCAT --------------------------------------------#
-
-all_X = np.concatenate((ugyfel_X_train, diszpecser_X_train), axis=0)   
-all_y = np.concatenate((encoded_ugyfelTarget, encoded_diszpecserTarget), axis=0)   
-
-distinct_all_y = list(set(all_y))
-distinct_all_y
-
-ugyfel_X_train
-diszpecser_X_train
-all_X
-
-print("X: Az ügyfél beszédek száma: {}, a diszpécser beszédek száma: {}, a kettő együtt: {}".format(len(ugyfel_X_train), len(diszpecser_X_train), len(all_X)))
-
-encoded_ugyfelTarget
-encoded_diszpecserTarget
-all_y
-
-print("y: Az ügyfél beszédek száma: {}, a diszpécser beszédek száma: {}, a kettő együtt: {}".format(len(encoded_ugyfelTarget), len(encoded_diszpecserTarget), len(all_y))) 
-
-encoder = LabelEncoder()
-encoder.fit(all_y)
-encoded_Y = encoder.transform(all_y)
-# convert integers to dummy variables (i.e. one hot encoded)
-dummy_y = np_utils.to_categorical(encoded_Y)
-dummy_y
-dummy_y[0]
-
-
-X_train, X_test, y_train, y_test = train_test_split(all_X, dummy_y, test_size=0.2)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 # X_train
 # X_test
@@ -943,49 +978,284 @@ X_train, X_test, y_train, y_test = train_test_split(all_X, dummy_y, test_size=0.
 
 # Build the model 
 embedding_vector_length = 32 
-top_words = 5000
+top_words = len(t.word_index) + 1
 
 model = Sequential() 
 model.add(Embedding(top_words, embedding_vector_length, input_length=max_textSize)) 
 model.add(LSTM(100)) 
-model.add(Dense(8, input_dim=8, activation='relu'))
-model.add(Dense(8, activation='softmax')) 
-model.compile(loss='binary_crossentropy',optimizer='adam', metrics=['accuracy']) 
+model.add(Dense(5, input_dim=5, activation='relu'))
+model.add(Dense(5, activation='softmax')) 
+model.compile(loss="categorical_crossentropy" ,optimizer='adam', metrics=['accuracy']) 
 print(model.summary()) 
 
-model.fit(X_train, y_train, validation_data=(X_test, y_test), nb_epoch=3, batch_size=64)
+model.fit(X_train, y_train, validation_data=(X_test, y_test), nb_epoch=7, batch_size=64, class_weight=weights)
 
 scores = model.evaluate(X_test, y_test, verbose=0) 
 print("Accuracy: %.2f%%" % (scores[1]*100))
 
-# N = "ő fölvettem a telefont,és egy gépi hang azt közölte, hogy hiány van a számlámon, és ki fogják kapcsolni a telefonomat."
+# ---------------------------------------- TEST THE MODEL ------------------------------------------------#
+
+N = "ő fölvettem a telefont,és egy gépi hang azt közölte, hogy hiány van a számlámon, és ki fogják kapcsolni a telefonomat."
+P = "mondom  azt se tudtam hogy honna jön a hívás, aztán mikor ((szám))"
+sajat = "nem értem mi olyan nehéz ezen megcsinálni... semmire nem képesek?"
+sajat = "nagyon szépen köszönöm a segítségét"
+sajat = "Rendben, Köszönöm"
+
+def model_test2(sentence):
+    #print(sentence)
+    sentence.replace(",", '')
+    
+    splitted_sentence = split_senteces_into_words(sentence)
+    #splitted_sentence
+    
+    filtered_sentence = []
+    for i in splitted_sentence:
+        if i not in stopWords:
+            filtered_sentence.append(i)
+    
+    #filtered_sentence
+    
+    encode_filtered = encode(filtered_sentence, t)
+    #encode_filtered
+    #decode(encode_filtered, reverse_word_map)
+    
+    asd = [encode_filtered]
+    #asd
+    padded_sentence = sequence.pad_sequences(asd, maxlen = max_textSize)
+    #padded_sentence
+    
+    res = model.predict(array([padded_sentence][0]))
+    
+    #print(res[0])
+    for i in range(len(res[0])):
+        erzelem = num_toChar_switcher_2.get(i)
+        szazalek = round((res[0][i] * 100), 2)
+        print(erzelem + ": " + str(szazalek) + "%")
+
+
+model_test(sajat)
+
+find = []
+for i in range(8):
+    find.append(next(x for x, val in enumerate(target) if val == num_toChar_switcher.get(i)))
+
+find
+
+for i in find:
+    print("Eredeti üzenet:")
+    print(texts[i])
+    print("Eredeti érzelem:")
+    print(target[i] + "\n\nKiértlkelés:")
+    model_test2(texts[i])
+    print("\n")
+    print("--------------------------------------------------")
+
+
+######################################################################################################################################################
+######################################################################################################################################################
+
+atLeastFive_indexes = [i for i in range(len(allFilteredTexts)) if len(allFilteredTexts[i]) > 4]
+
+min5_texts = []
+min5_target = []
+
+for i in atLeastFive_indexes:
+    min5_target.append(allTarget[i])
+    min5_texts.append(allFilteredTexts[i])
+
+min5_target
+min5_texts
+
+# count non N targets
+non_NTargets = []
+non_NTargets = sum(map(lambda x : x != "N", min5_target))
+non_NTargets
+
+# select all N target indexes
+allN_X = []
+allN_X = [i for i in range(len(min5_texts)) if min5_target[i] == "N"]
+allN_X
+len(allN_X) == len(min5_target) - non_NTargets
+
+# select random indexes from all index
+import random
+sampling_indexes = random.choices(allN_X, k=non_NTargets*2)
+sampling_indexes
+
+# select non N indexes from all index
+non_N_Indexes = []
+non_N_Indexes = [i for i in range(len(min5_target)) if min5_target[i] != "N"]
+non_N_Indexes
+
+#merge indexes
+indexes = sampling_indexes + non_N_Indexes
+indexes
+
+len(non_N_Indexes) + len(sampling_indexes) == len(indexes)
+
+# select elements 
+selectedTexts = [min5_texts[i] for i in indexes]
+selectedTexts
+
+selectedTargets = [min5_target[i] for i in indexes]
+selectedTargets
+
+for i in non_N_Indexes:
+    selectedTexts.append(min5_texts[i])
+    selectedTargets.append(min5_target[i])
+
+len(selectedTargets) == (len(non_N_Indexes) *2) + len(sampling_indexes)
+
+len(sampling_indexes)
+selectedTexts[3475]
+selectedTargets[3475]
+
+selectedTexts[1778]
+selectedTargets[1778]
+
+
+# O, R, L, és V to M
+for i in range(len(selectedTargets)):
+    if selectedTargets[i] in "OVRLPEI":
+        selectedTargets[i] = "M"
+
+selectedTargets
+
+# ----------------------------------------- NEW SWITCHERS --------------------------------------------------#
+
+char_toNum_switcher_3 = {
+        "N" : 0,
+        "M" : 1
+}
+
+num_toChar_switcher_3 = {
+         0: "N",
+         1: "M"
+}
+
+# ----------------------------------------- ENCODE TEXTS --------------------------------------------------#
+
+for i in range(2):
+    print("The count of " + num_toChar_switcher_3.get(i) + " is: " + str(sum(map(lambda x: x == num_toChar_switcher_3.get(i), selectedTargets))))
+
+
+# encode seleted texts
+encoded_texts = []
+encoded_texts = [encode(i, t) for i in selectedTexts]
+
+#pad sequences 
+max_textSize = len(max(encoded_texts, key=len)) 
+max_textSize
+
+X = sequence.pad_sequences(encoded_texts, maxlen = max_textSize)
+X
+
+# ------------------------------------ ONE HOT ENCODE TARGET ----------------------------------------------#
+
+numtarget = []
+numTarget = [char_toNum_switcher_3.get(i) for i in selectedTargets]
+numTarget
+
+# sorted_nums = sorted(list(set(numTarget)))
+# sorted_nums
 # 
-# tmp_padded = sequence.pad_sequences([one_hot(N, vocab_size)], maxlen=max_textSize) 
-# array([tmp_padded][0])
-# 
-# asd = model.predict(array([tmp_padded][0]))
-# blabla = [int(round(x)) for x in asd[0]]
-# blabla
-# 
-# P = "mondom először azt se tudtam hogy honna jön a hívás, aztán mikor ((szám))"
-# 
-# tmp_padded2 = sequence.pad_sequences([one_hot(P, vocab_size)], maxlen=max_textSize)
-# 
-# array([tmp_padded2][0])
-# 
-# asd2 = model.predict(array([tmp_padded2][0]))
-# blabla2 = [int(round(x)) for x in asd2[0]]
-# blabla2
-# 
-# #reverse lookup
-# 
-# t.word_index.items()
-# 
-# word_to_id = t.word_index
-# word_to_id = {k:(v+3) for k,v in word_to_id.items()}
-# word_to_id["<PAD>"] = 0
-# word_to_id["<START>"] = 1
-# word_to_id["<UNK>"] = 2
-# 
-# id_to_word = {value:key for key,value in word_to_id.items()}
-# print(' '.join(id_to_word[id] for id in tmp_padded2[0][376:]))
+# for i in sorted_nums:
+#     print(num_toChar_switcher.get(i))
+
+encoder = LabelEncoder()
+encoder.fit(numTarget)
+# convert integers to dummy variables (i.e. one hot encoded)
+y = np_utils.to_categorical(numTarget)
+
+
+len(selectedTargets)
+selectedTargets[1730:1740]
+numTarget[1730:1740]
+y[1730:1740]
+
+y[0]
+
+# ---------------------------------------- BUILD THE MODEL ------------------------------------------------#
+
+len(X) == len(y)
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+# X_train
+# X_test
+# y_train
+# y_test
+
+# Build the model 
+embedding_vector_length = 32 
+top_words = len(t.word_index) + 1
+
+model = Sequential() 
+model.add(Embedding(top_words, embedding_vector_length, input_length=max_textSize)) 
+model.add(LSTM(100)) 
+model.add(Dense(2, input_dim=2, activation='relu'))
+model.add(Dense(2, activation='softmax')) 
+model.compile(loss="categorical_crossentropy" ,optimizer='adam', metrics=['accuracy']) 
+print(model.summary()) 
+
+model.fit(X_train, y_train, validation_data=(X_test, y_test), nb_epoch=5, batch_size=64)
+
+scores = model.evaluate(X_test, y_test, verbose=0) 
+print("Accuracy: %.2f%%" % (scores[1]*100))
+
+# ---------------------------------------- TEST THE MODEL ------------------------------------------------#
+
+N = "ő fölvettem a telefont,és egy gépi hang azt közölte, hogy hiány van a számlámon, és ki fogják kapcsolni a telefonomat."
+P = "mondom  azt se tudtam hogy honna jön a hívás, aztán mikor ((szám))"
+sajat = "nem értem mi olyan nehéz ezen megcsinálni... semmire nem képesek?"
+sajat = "nagyon szépen köszönöm a segítségét"
+sajat = "Rendben, Köszönöm"
+
+def model_test3(sentence):
+    #print(sentence)
+    sentence.replace(",", '')
+    
+    splitted_sentence = split_senteces_into_words(sentence)
+    #splitted_sentence
+    
+    filtered_sentence = []
+    for i in splitted_sentence:
+        if i not in stopWords:
+            filtered_sentence.append(i)
+    
+    #filtered_sentence
+    
+    encode_filtered = encode(filtered_sentence, t)
+    #encode_filtered
+    #decode(encode_filtered, reverse_word_map)
+    
+    asd = [encode_filtered]
+    #asd
+    padded_sentence = sequence.pad_sequences(asd, maxlen = max_textSize)
+    #padded_sentence
+    
+    res = model.predict(array([padded_sentence][0]))
+    
+    #print(res[0])
+    for i in range(len(res[0])):
+        erzelem = num_toChar_switcher_3.get(i)
+        szazalek = round((res[0][i] * 100), 2)
+        print(erzelem + ": " + str(szazalek) + "%")
+
+
+model_test(sajat)
+
+find = []
+for i in range(8):
+    find.append(next(x for x, val in enumerate(target) if (val == num_toChar_switcher.get(i) and len(texts[x]) > 4)))
+
+find
+
+for i in find:
+    print("Eredeti mondat:")
+    print(texts[i])
+    print("Eredeti érzelem:")
+    print(target[i] + "\n\nKiértlkelés:")
+    model_test3(texts[i])
+    print("\n")
+    print("--------------------------------------------------")
